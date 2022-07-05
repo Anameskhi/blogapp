@@ -1,0 +1,21 @@
+<p style="color: green"><%= notice %></p>
+  <div class= "container">
+    <div class="row justify-content-md-center">
+          <div class="col-8 mt-4">
+            <div class="card text-center shadow mb-5 bg-white rounded">
+              
+    <h1 class="row justify-content-md-center">Posts</h1>
+    <%= link_to "New post", new_post_path, class: "btn btn-primary" %>
+    <div id="posts" class="card-body" >
+      <% @posts.each do |post| %>
+        <%= render post %>
+        
+          <%= link_to "Show this post",post, class: "btn btn-primary" %>
+      
+      <% end %>
+    </div>
+ 
+      </div>
+    </dev>
+  </div>
+</div>

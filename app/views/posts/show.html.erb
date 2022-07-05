@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+<div class = "container">
+<%= render @post %>
+
+<% if current_user && current_user.id == @post.user_id%>
+  <%= link_to "Edit this post", edit_post_path(@post), class: "btn btn-primary" %> <br>
+  <%= button_to "Destroy this post", @post, method: :delete , class: "btn btn-danger"%>
+<%else%>
+  <%= link_to "Back to posts", posts_path, class: "btn btn-primary" %>
+<%end%>
+<div class= "">
+ <%= render 'comment/form', post: @post, comment: @post.comments.build,
+   submit_label: "Comment"%>
+ <% @comment.each do |comment| %>
+ <%= render 'comment/comment',
+  post: @post, 
+  comment: comment
+ %>
+ <%end%>
+
+</div>
+
+</div>
