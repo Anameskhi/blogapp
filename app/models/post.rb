@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  has_many :likes, dependent: :destroy
   validates :title, presence: true, length: {minimum: 5, maximum: 50}
   validates :body, presence: true, length: {minimum: 10, maximum: 150}
   belongs_to :user
@@ -6,5 +7,5 @@ class Post < ApplicationRecord
   
   has_noticed_notifications model_name: 'Notification'
   has_many :notifications, through: :user, dependent: :destroy
-
+ 
 end

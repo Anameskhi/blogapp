@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: %i[show index]
+  before_action :set_post, only: %i[ show edit update destroy vote ]
+  before_action :authenticate_user!, except: %i[show index vote] 
+  respond_to :js, :json, :html
 
   # GET /posts or /posts.json
   def index
@@ -18,8 +19,6 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-   
-
   end
 
   # GET /posts/1/edit
@@ -62,6 +61,14 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def vote
+    if !current_user.liked? @post
+      @post.liked_by current_user
+    elsif current_user.liked? @post
+      @post.unliked_by current_user
     end
   end
 

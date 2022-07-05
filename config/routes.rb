@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
  
   resources :posts do 
-    resources :comments
+    resources :comments 
+    resources :likes
+
   end
   
   get '/about', to: 'pages#about'
@@ -13,4 +15,6 @@ Rails.application.routes.draw do
     registrations: "user/registrations"
   }
 
+
+  
 end

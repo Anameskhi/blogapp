@@ -8,8 +8,10 @@
     <%= link_to "New post", new_post_path, class: "btn btn-primary" %>
     <div id="posts" class="card-body" >
       <% @posts.each do |post| %>
-        <%= render post %>
-        
+        <%= render post %> 
+       
+
+        <p style="color:red;text-align:center;" ><%= post.likes.count  %> <%=  (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
           <%= link_to "Show this post",post, class: "btn btn-primary" %>
       
       <% end %>

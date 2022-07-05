@@ -9,8 +9,6 @@
           <h6 class="card-header font-italic">posted by <%=post.user.username%></h6>
            <h6 class="card-title"><%= pluralize(post.views, "view") %></h6>
            <h4 class="card-title"><%= post.title %></h4>
-            
-           
           <div class="card-text">
             <%= post.body %>
           </div>
@@ -19,7 +17,7 @@
          <div class="card-footer text-muted" >
         <small>Created <%= time_ago_in_words(post.created_at) %> ago, 
         edited <%= time_ago_in_words(post.updated_at) %> ago</small>
-  </div>
+        </div>
 
         </div>
       </div>
