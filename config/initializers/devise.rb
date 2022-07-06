@@ -245,7 +245,7 @@ Devise.setup do |config|
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
   # config.scoped_views = false
-
+  config.omniauth :google_oauth2,"921061886703-lt388scob9rpv3ir2e1f4i8rmasg0pn0.apps.googleusercontent.com","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"
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
   # config.default_scope = :user

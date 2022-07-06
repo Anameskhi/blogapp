@@ -7,14 +7,16 @@ Rails.application.routes.draw do
   end
   
   get '/about', to: 'pages#about'
-  
+  get '/auth/:provider/callback', to: 'sessions#create'
+
 
   root 'pages#home'
   devise_for :users, controllers: {
     sessions: "user/sessions",
-    registrations: "user/registrations"
+    registrations: "user/registrations",
+    omniauth_callbacks: 'user/omniauth_callbacks' 
   }
-
+ 
 
   
 end
