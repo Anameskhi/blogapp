@@ -76,3 +76,6 @@ group :test do
 end
 
 gem "noticed", "~> 1.5"
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
+
