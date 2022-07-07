@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     registrations: "user/registrations",
     omniauth_callbacks: 'user/omniauth_callbacks' 
   }
- 
+  OmniAuth.config.allowed_request_methods = [:get]
 
   
 end
