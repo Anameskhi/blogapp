@@ -79,3 +79,5 @@ gem "noticed", "~> 1.5"
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 
+
+gem "ransack", "~> 3.2"
