@@ -10,7 +10,8 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :notifications, as: :recipient, dependent: :destroy
-
+  enum role: [:user, :admin]
+  after_initialize :set_default_role, if: :new_record?
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first
@@ -23,5 +24,10 @@ class User < ApplicationRecord
       end
       user
   end
+
+  private
+   def set_default_role
+    self.role ||= :user
+   end
 
 end

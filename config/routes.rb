@@ -1,14 +1,21 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do 
+  authenticated :user, ->(user) {user.admin?} do
+    get 'admin', to: 'admin#index'
+    get 'admin/posts'
+    get 'admin/comments'
+    get 'admin/users'
+    get 'admin/show_post'
+  end
   get 'search', to: "search#index"
  
-  resources :posts do 
+    resources :posts do 
     resources :comments 
     resources :likes
 
   end
   
   get '/about', to: 'pages#about'
-
+ 
 
 
   root 'pages#home'
@@ -25,8 +32,7 @@ Rails.application.routes.draw do
 
 
   match '/auth/:provider/callback', :to => 'omniauth#google_oauth2', :via => [:get, :post]
-  
-  
+
 
   OmniAuth.config.allowed_request_methods = [:get]
 

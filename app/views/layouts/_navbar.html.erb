@@ -36,13 +36,14 @@
            <%= current_user.username %>
           </a>
           <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+           <li><%= link_to "Admin", admin_path, class: "dropdown-item" if current_user.admin? %>
             <li><%= link_to "New Post", new_post_path, class: "dropdown-item" %>
             <li><%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item"%>
             <li><hr class="dropdown-divider"></li>
             <li><%= button_to "Log Out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
           </ul>
          
-          <%end%>
+        <%end%>
         </li>
       </ul>
       
