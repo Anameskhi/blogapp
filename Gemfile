@@ -83,3 +83,4 @@ gem "omniauth-rails_csrf_protection"
 gem "ransack", "~> 3.2"
 
 gem "friendly_id", "~> 5.4"
+gem 'telephone_number'

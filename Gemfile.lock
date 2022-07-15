@@ -261,6 +261,7 @@ GEM
     stimulus-rails (1.0.4)
       railties (>= 6.0.0)
     strscan (3.0.3)
+    telephone_number (1.4.16)
     thor (1.2.1)
     timeout (0.3.0)
     turbo-rails (1.1.1)
@@ -314,6 +315,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
+  telephone_number
   turbo-rails
   tzinfo-data
   web-console

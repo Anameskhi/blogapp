@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :notifications, as: :recipient, dependent: :destroy
   enum role: [:user, :admin]
   after_initialize :set_default_role, if: :new_record?
+  has_one_attached :avatar
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first
