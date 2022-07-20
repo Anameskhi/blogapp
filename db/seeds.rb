@@ -11,7 +11,7 @@ User.create(email: 'mesxiana3@gmail.com',
             password_confirmation: 'password',
             username: 'anuka',
             role: User.roles[:admin] )
- User.create(email: 'a.meskhii@gmail.com',
+User.create(email: 'a.meskhii@gmail.com',
               password: 'password',
               password_confirmation: 'password',
               username: 'anuki',

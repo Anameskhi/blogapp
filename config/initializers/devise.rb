@@ -247,7 +247,7 @@ Devise.setup do |config|
   # config.scoped_views = false
 
 
-    config.omniauth :google_oauth2,  "309706836044-cs9romgepq3tgouf8o7mdsq448te9v72.apps.googleusercontent.com", "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",  {access_type: 'online'}
+    config.omniauth :google_oauth2,  "309706836044-cs9romgepq3tgouf8o7mdsq448te9v72.apps.googleusercontent.com", "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",  {}
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
   # config.default_scope = :user
