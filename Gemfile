@@ -84,3 +84,5 @@ gem "ransack", "~> 3.2"
 
 gem "friendly_id", "~> 5.4"
 gem 'telephone_number'
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick'

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
   
   get '/about', to: 'pages#about'
- 
+  get '/user/:id', to: 'users#show', as: 'user_profile'
 
 
   root 'pages#home'

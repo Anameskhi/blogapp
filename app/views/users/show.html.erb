@@ -1,0 +1,4 @@
+<h1>Profile For <%=@user.username%><h1>
+<%= image_tag @user.avatar_url if @user.avatar? class: "img-fluid max-width: 100%" %>
+
+<p> <%= link_to "Edit", edit_user_registration_path(@user)%> 
