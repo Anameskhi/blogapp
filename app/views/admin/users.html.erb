@@ -15,7 +15,7 @@
     <% @users.each do |user|%>
     <tr>
     <th scope = "row"><%=user.id%></th>
-    <td><%= link_to user.username.truncate(15), admin_users_path(user) %></td>
+    <td><%= link_to user.username.truncate(15), user_profile_path(user) %></td>
     <td><%= user.email %></td>
     <td><%= user.role %></td>
     

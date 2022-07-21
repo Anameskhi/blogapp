@@ -8,8 +8,7 @@ class User < ApplicationRecord
  devise :omniauthable, omniauth_providers: [:google_oauth2]
  
 
-
-
+ 
  has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :notifications, as: :recipient, dependent: :destroy
@@ -31,6 +30,7 @@ class User < ApplicationRecord
       user.skip_confirmation!
     end
   end
+  
   private
    def set_default_role
     self.role ||= :user

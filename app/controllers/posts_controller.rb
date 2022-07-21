@@ -11,7 +11,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    if current_user.id != @post.user_id
     @post.update(views: @post.views + 1)
+    end
     @comment= @post.comments.order(created_at: :desc)
     mark_notifications_as_read
   end
