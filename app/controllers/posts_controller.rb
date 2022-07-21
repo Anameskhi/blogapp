@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
+
   before_action :set_post, only: %i[ show edit update destroy vote ]
   before_action :authenticate_user!, except: %i[show index vote] 
   respond_to :js, :json, :html
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @pagy,@posts = pagy(Post.all.order(created_at: :desc), items: 5)
     
   end
 

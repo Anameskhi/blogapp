@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+   include Pagy::Backend
    protect_from_forgery with: :exception, prepend: true
    before_action :set_notifications, if: :current_user
    protect_from_forgery with: :exception
