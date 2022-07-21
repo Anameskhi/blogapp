@@ -5,8 +5,24 @@
           
 <h1>Profile For <%=@user.username%><h1>
 
-<%= image_tag(@user.avatar_url,  class: "image_size") if @user.avatar? %>
 
+<h6>
+ <%= pluralize(@user.comments.size, "Comment")%> |
+ <%= pluralize(@user.views, "View")%> |
+ <%= pluralize(@user.posts.size, "Post")%>
+ </h6>
+ <%= image_tag(@user.avatar_url,  class: "image_size") if @user.avatar? %>
+ <div >
+   <% @posts.each do |post|%>
+     <div >
+     <% if current_user.id == post.user_id%>
+        <div class= "card_body">
+        <h5 class="card-title"><%= link_to post.title, post%></h5>
+        <p class="card-text"><%= post.body %></p>
+        <p class="card-title"><%= "#{time_ago_in_words(post.created_at)} ago" %></p>
+   <%end%>
+   </div>
+   <%end%>
 <p> <%= (link_to "Edit", edit_user_registration_path(@user)) if @user == current_user%> 
 
         </div>
