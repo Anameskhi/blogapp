@@ -1,29 +1,33 @@
 <div class="">
-    <div class="row justify-content-md-center">
-      <div class="col-8 mt-4">
-        <div class="card text-center shadow mb-5 bg-white rounded">
+  <div class="row justify-content-md-center">
+    <div class="col-8 mt-4">
+      <div class="card text-center shadow mb-5 bg-white rounded">
           
-<h1>Profile For <%=@user.username%><h1>
+<h1 class="row justify-content-md-center"> Profile For <%=@user.username%><h1>
 
 
 <h6>
+ <%= pluralize(@user.posts.size, "Post")%> |
  <%= pluralize(@user.comments.size, "Comment")%> |
- <%= pluralize(@user.views, "View")%> |
- <%= pluralize(@user.posts.size, "Post")%>
+ <%= pluralize(@user.views, "View")%> 
+
  </h6>
  <%= image_tag(@user.avatar_url,  class: "image_size") if @user.avatar? %>
- <div >
+ <div class="card-body">
    <% @posts.each do |post|%>
-     <div >
+     <div  >
      <% if current_user.id == post.user_id%>
         <div class= "card_body">
         <h5 class="card-title"><%= link_to post.title, post%></h5>
-        <p class="card-text"><%= post.body %></p>
-        <p class="card-title"><%= "#{time_ago_in_words(post.created_at)} ago" %></p>
+        <p class="card-text"><%= post.body.to_plain_text.truncate_words(100) %></p>
+        <p> <%= (link_to "Edit", edit_user_registration_path(@user)) if @user == current_user%> </p>
+        <p class="card-footer text-muted"><%= "#{time_ago_in_words(post.created_at)} ago" %></p>
+        
    <%end%>
    </div>
    <%end%>
-<p> <%= (link_to "Edit", edit_user_registration_path(@user)) if @user == current_user%> 
+   </div>
+
 
         </div>
      </div>
