@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     if current_user.id != @post.user_id
     @post.update(views: @post.views + 1)
     end
-    @comment= @post.comments.order(created_at: :desc)
+    @pagy,@comment= pagy(@post.comments.order(created_at: :desc), items: 5)
     mark_notifications_as_read
   end
 

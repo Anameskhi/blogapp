@@ -3,7 +3,7 @@ class AdminController < ApplicationController
   end
 
   def posts
-    @posts = Post.all.includes(:user, :comments)
+    @pagy,@posts = pagy(Post.all.includes(:user, :comments), items: 15)
   end
 
   def comments
