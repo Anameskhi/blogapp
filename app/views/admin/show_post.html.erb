@@ -4,32 +4,32 @@
       <div class="col-8 mt-4">
         <div class="card text-center shadow mb-5 bg-white rounded">
 <div class = "container">
-  <h1 class = "text-center"> Administrator</h1>
+  <h1 class = "text-center"> <%=t("administrator")%></h1>
   <%= render 'admin/nav_links'%>
   <div class="text-center mt-5">
    <div class="btn-group">
-     <%=link_to "Edit", edit_post_path(@post), class:"btn btn-warning"%>
-     <%=button_to "Delete", @post, method: :delete, data: { confirm: "Are you Sure?" }, class:"btn btn-danger"%>
+     <%=link_to t("edit"), edit_post_path(@post), class:"btn btn-warning"%>
+     <%=button_to t("delete"), @post, method: :delete, data: { confirm: t("are_you_sure") }, class:"btn btn-danger"%>
    </div>
  </div>
  <div class="card-body">
  <p>
-   <strong>Title:</strong><%=@post.title %>
+   <strong><%=t("title")%>:</strong><%=@post.title %>
  </p>
  <div class="card-body">
   <p>
-   <strong>Views:</strong><%=@post.views %>
+   <strong><%=t("views")%>:</strong><%=@post.views %>
  </p>
  </div>
  <div class="card-body">
   <p>
-   <strong>Author:</strong>
+   <strong><%=t("author")%>:</strong>
    <%= "#{@post.user.email} | #{@post.user.username} | #{pluralize(@post.views, "View")}" %>
  </p>
  </div>
   <div class="row mt-1">
   <p>
-   <strong>Body:</strong><%=@post.body %>
+   <strong><%=t("body")%>:</strong><%=@post.body %>
  </p>
  </div>
  <div class="row mt-1">

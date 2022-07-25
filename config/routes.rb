@@ -1,4 +1,5 @@
 Rails.application.routes.draw do 
+  
   authenticated :user, ->(user) {user.admin?} do
     get 'admin', to: 'admin#index'
     get 'admin/posts'
@@ -17,8 +18,8 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/user/:id', to: 'users#show', as: 'user_profile'
 
-
   root 'pages#home'
+
   # devise_for :users, controllers: {  }
   devise_for :users, only: :omniauth_callbacks, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
 

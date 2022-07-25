@@ -1,24 +1,31 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <%=link_to "Blog" , root_path, class: "navbar-brand" %>
+    <%=link_to t("blog") , root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       
         <li class="nav-item">
-          <%=link_to "Home" , root_path, class: "nav-link" %>
+          <%=link_to t("blogs") , posts_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%=link_to "Blog" , posts_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%=link_to "About" , about_path, class: "nav-link" %>
+          <%=link_to t("about") , about_path, class: "nav-link" %>
         </li>
         <li class="nav-item"> 
-         <%= link_to "New Post", new_post_path, class: "nav-link" %>
+         <%= link_to t("new_post"), new_post_path, class: "nav-link" %>
         </li>
+
+        <%=content_tag :li, class: "nav-item" do %>
+        <%=link_to image_tag("en.png", width: 30, height: 25), {locale: :en}, class: "nav-link"%>
+        <%end %>
         
+        <%=content_tag :li, class: "nav-item" do %>   
+        <%=link_to image_tag("geo.png", width: 30, height: 25 ), {locale: :ka}, class: "nav-link"%>
+        <%end %>
+  
       </ul>
       <%= render 'search/form'%>
        <ul class = "navbar-nav">
@@ -28,24 +35,24 @@
       <li class="nav-item dropdown">
       <% if current_user.nil? %>
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           User Side
+           <%= t("user_side") %>
           </a>
            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-            <li><%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %>
-            <li><%= link_to "Signin", new_user_session_path, class: "dropdown-item" %>
+            <li><%= link_to t("sign_up"), new_user_registration_path, class: "dropdown-item" %>
+            <li><%= link_to t("sign_in"), new_user_session_path, class: "dropdown-item" %>
           </ul>
           <%else%>
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
            <%= current_user.username %>
           </a>
           <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-           <li><%= link_to "Show Profile", user_profile_path(current_user), class: "dropdown-item" %>
+           <li><%= link_to t("show_profile"), user_profile_path(current_user), class: "dropdown-item" %>
 
-           <li><%= link_to "Admin", admin_path, class: "dropdown-item" if current_user.admin? %>
-            <li><%= link_to "New Post", new_post_path, class: "dropdown-item" %>
-            <li><%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item"%>
+           <li><%= link_to t("admin"), admin_path, class: "dropdown-item" if current_user.admin? %>
+            <li><%= link_to t("new_post"), new_post_path, class: "dropdown-item" %>
+            <li><%= link_to t("edit_profile"), edit_user_registration_path, class: "dropdown-item"%>
             <li><hr class="dropdown-divider"></li>
-            <li><%= button_to "Log Out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
+            <li><%= button_to t("log_out"), destroy_user_session_path, class: "dropdown-item", method: :delete %>
           </ul>
         <%end%>
         </li>

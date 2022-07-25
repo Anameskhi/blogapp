@@ -1,6 +1,7 @@
 <div class = 'container'>
-  <h1>My Personal Home Page</h1>
-  <p>You can read more about me, or checkout my blog</p>
-  <%=link_to 'About me', about_path, class:"btn btn-secondary"%>
-  <%=link_to 'Blogs', posts_path, class:"btn btn-primary" %>
+<h1><%= t("welcome") %></h1>
+  <h1><%= t("my_personal_home_page") %></h1>
+  <p><%= t("more_info")%></p>
+  <%=link_to t('about_me'), about_path, class:"btn btn-secondary"%>
+  <%=link_to t('blogs'), posts_path, class:"btn btn-primary" %>
 </div>

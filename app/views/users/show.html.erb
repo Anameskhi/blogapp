@@ -3,7 +3,7 @@
     <div class="col-8 mt-4">
       <div class="card text-center shadow mb-5 bg-white rounded">
           
-<h1 class="row justify-content-md-center"> Profile For <%=@user.username%><h1>
+<h1 class="row justify-content-md-center"> <%=t("profile_for")%> <%=@user.username%><h1>
 
 
 <h6>
@@ -20,8 +20,8 @@
         <div class= "card_body">
         <h5 class="card-title"><%= link_to post.title, post%></h5>
         <p class="card-text"><%= post.body.to_plain_text.truncate_words(100) %></p>
-        <p> <%= (link_to "Edit", edit_user_registration_path(@user)) if @user == current_user%> </p>
-        <p class="card-footer text-muted"><%= "#{time_ago_in_words(post.created_at)} ago" %></p>
+        <p> <%= (link_to  t("edit") , edit_user_registration_path(@user)) if @user == current_user%> </p>
+        <p class="card-footer text-muted"><%= "#{time_ago_in_words(post.created_at)} " %> <%= t("ago")%></p>
         
    <%end%>
    </div>

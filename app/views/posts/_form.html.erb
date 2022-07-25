@@ -12,16 +12,16 @@
   <% end %>
 
   <div id="title" class="card-body">
-    <%= form.label :title, style: "display: block" %>
+    <%= form.label t("title"), style: "display: block" %>
     <%= form.text_field :title , class: "form-control "%>
   </div>
 
   <div id="body" class="card-body">
-    <%= form.label :body, style: "display: block" %>
+    <%= form.label t("body"), style: "display: block" %>
     <%= form.rich_text_area :body, class: "form-control " %>
   </div>
 
   <div>
-    <%= form.submit :Submit, class: 'btn btn-primary' %>
+    <%= form.submit t("submit"), class: 'btn btn-primary' %>
   </div>
 <% end %>

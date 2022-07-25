@@ -1,13 +1,13 @@
 <div class="container">
-  <h1 class="text-center">Administrator</h1>
+  <h1 class="text-center"><%=t("administrator")%></h1>
   <%=render 'admin/nav_links'%>
 <table class = "table table-dark table-striped">
   <thead>
   <tr>
     <th scope="col">Id</th>
-    <th scope="col">Post</th>
-    <th scope="col">Author</th>
-    <th scope="col">Comments</th>
+    <th scope="col"><%= t("posts")%></th>
+    <th scope="col"><%= t("author")%></th>
+    <th scope="col"><%= t("comments")%></th>
   </tr>
   </thead>
   <tbody>
@@ -16,11 +16,12 @@
     <th scope = "row"><%=post.id%></th>
     <td><%= link_to post.title.truncate(15), admin_post_path(post) %></td>
     <td><%= link_to post.user.username, user_profile_path(post.user) %></td>
-    <td><%= pluralize(post.comments.size, "Comment") %></td>
+    <td><%= pluralize(post.comments.size, "comment") %></td>
     </tr>
     <%end%>
   </tbody>
 </table>
+<%= pagy_bootstrap_nav(@pagy).html_safe%>
 </div>
 
-<%= pagy_bootstrap_nav(@pagy).html_safe%>
+
