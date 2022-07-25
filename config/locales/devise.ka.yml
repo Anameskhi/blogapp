@@ -8,8 +8,8 @@ en:
       already_authenticated: "უკვე სისტემაში ხართ"
       inactive: "თქვენი ექაუნთი ამ დროისთვის არ არის აქტიური."
       invalid: "Invalid %{authentication_keys} or password."
-      locked: "Your account is locked."
-      last_attempt: "You have one more attempt before your account is locked."
+      locked: "თქვენი ანგარიში დაბლოკილია."
+      last_attempt: "თქვენ გაქვთ კიდევ ერთი მცდელობა, სანამ თქვენი ანგარიში დაიბლოკება."
       not_found_in_database: "Invalid %{authentication_keys} or password."
       timeout: "თქვენს სისტემაში ყოფნას ვადა ამოეწურა, გთხოვთ თავიდან გააიროთ შესვლა ."
       unauthenticated: "თქვენ უნდა იყოთ დარეგისტრირებული, ან შესული სისტემაში რომ გაგრძელოთ მოქმედება."
@@ -20,7 +20,7 @@ en:
       reset_password_instructions:
         subject: "პაროლის შეცვლის ინსტრუქცია"
       unlock_instructions:
-        subject: "Unlock instructions"
+        subject: "განბლოკვის ინსტრუქციები"
       email_changed:
         subject: "მეილის წარმატებით შეიცვალა"
       password_change:
@@ -30,34 +30,34 @@ en:
       success: "Successfully authenticated from %{kind} account."
     passwords:
       no_token: "თქვენ ვერ შეხვალთ ამ გვერდზე პაროლის გადატვირთვის ელფოსტის გარეშე. თუ თქვენ მოსულხართ პაროლის გადატვირთვის ელფოსტიდან, დარწმუნდით, რომ იყენებდით მოწოდებულ სრულ URL-ს."
-      send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
-      send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
-      updated: "Your password has been changed successfully. You are now signed in."
-      updated_not_active: "Your password has been changed successfully."
+      send_instructions: "რამდენიმე წუთში მიიღებთ ელ.წერილს ინსტრუქციებით თქვენი პაროლის აღდგენის შესახებ."
+      send_paranoid_instructions: "თუ თქვენი ელექტრონული ფოსტის მისამართი არსებობს ჩვენს მონაცემთა ბაზაში, რამდენიმე წუთში მიიღებთ პაროლის აღდგენის ბმულს თქვენს ელფოსტის მისამართზე."
+      updated: "თქვენი პაროლი წარმატებით შეიცვალა. თქვენ ახლა შესული ხართ."
+      updated_not_active: "თქვენი პაროლი წარმატებით შეიცვალა."
     registrations:
       destroyed: "მშვიდობით, თქვენი ექაუნთი წარმატებით წაიშალა, ჩვენ იმედი გვაქვს რომ ისევ გიხილავთ."
       signed_up: "კეთილი იყოს თქვენი მობრძანება!თქვენ წარმატებით გაიარეთ ავტორიზაცია"
-      signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
-      signed_up_but_locked: "You have signed up successfully. However, we could not sign you in because your account is locked."
-      signed_up_but_unconfirmed: "A message with a confirmation link has been sent to your email address. Please follow the link to activate your account."
-      update_needs_confirmation: "You updated your account successfully, but we need to verify your new email address. Please check your email and follow the confirmation link to confirm your new email address."
+      signed_up_but_inactive: "თქვენ წარმატებით დარეგისტრირდით. თუმცა, ჩვენ ვერ შევედით, რადგან თქვენი ანგარიში ჯერ არ არის გააქტიურებული."
+      signed_up_but_locked: "თქვენ წარმატებით დარეგისტრირდით. თუმცა, ჩვენ ვერ შევედით, რადგან თქვენი ანგარიში დაბლოკილია."
+      signed_up_but_unconfirmed: "შეტყობინება დადასტურების ბმულით გაიგზავნა თქვენს ელფოსტის მისამართზე. გთხოვთ, მიჰყევით ბმულს თქვენი ანგარიშის გასააქტიურებლად."
+      update_needs_confirmation: "თქვენ წარმატებით განაახლეთ თქვენი ანგარიში, მაგრამ ჩვენ უნდა დავადასტუროთ თქვენი ახალი ელფოსტის მისამართი. გთხოვთ, შეამოწმოთ თქვენი ელფოსტა და მიჰყევით დადასტურების ბმულს თქვენი ახალი ელფოსტის მისამართის დასადასტურებლად."
       updated: "თქვენი ექაუნთი წარმატებით განახლდა"
-      updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again."
+      updated_but_not_signed_in: "თქვენი ანგარიში წარმატებით განახლდა, მაგრამ რადგან პაროლი შეიცვალა, თქვენ ხელახლა უნდა შეხვიდეთ."
     sessions:
       signed_in: "თქვენ წარმატებით გაიარეთ ავტორიზაცია"
       signed_out: "წარმატებით მოხდა თქვენი გამოსვლა სისტემიდან."
       already_signed_out: "წარმატებით მოხდა სისტემიდან გამოსვლა."
     unlocks:
-      send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
-      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      send_instructions: "რამდენიმე წუთში მიიღებთ ელ.წერილს ინსტრუქციებით, თუ როგორ უნდა განბლოკოთ თქვენი ანგარიში."
+      send_paranoid_instructions: "თუ თქვენი ანგარიში არსებობს, რამდენიმე წუთში მიიღებთ ელფოსტას მისი განბლოკვის ინსტრუქციებით."
+      unlocked: "თქვენი ანგარიში წარმატებით განბლოკილია. გთხოვთ შეხვიდეთ გასაგრძელებლად."
   errors:
     messages:
-      already_confirmed: "was already confirmed, please try signing in"
+      already_confirmed: "უკვე დადასტურებულია, გთხოვთ სცადოთ შესვლა"
       confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-      expired: "has expired, please request a new one"
+      expired: "დიდი დრო გავიდა, გთხოვთ მოითხოვოთ ახალი"
       not_found: "არ მოიძებნა"
-      not_locked: "was not locked"
+      not_locked: "არ იყო დაბლოკილი"
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
