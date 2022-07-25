@@ -1,6 +1,7 @@
 Rails.application.routes.draw do 
-  
-  authenticated :user, ->(user) {user.admin?} do
+scope "(:locale)", locale: /en|ka/ do
+
+   authenticated :user, ->(user) {user.admin?} do
     get 'admin', to: 'admin#index'
     get 'admin/posts'
     get 'admin/comments'
@@ -9,10 +10,9 @@ Rails.application.routes.draw do
   end
   get 'search', to: "search#index"
  
-    resources :posts do 
+  resources :posts do 
     resources :comments 
     resources :likes
-
   end
   
   get '/about', to: 'pages#about'
@@ -21,17 +21,15 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   # devise_for :users, controllers: {  }
-  devise_for :users, only: :omniauth_callbacks, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
 
   devise_for :users, skip: :omniauth_callbacks, controllers: {
     sessions: "users/sessions",
     registrations: "users/registrations",
     passwords: 'users/passwords'
-    
-   
   }
+end
 
-
+  devise_for :users, only: :omniauth_callbacks, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}
 
   match '/auth/:provider/callback', :to => 'omniauth#google_oauth2', :via => [:get, :post]
 

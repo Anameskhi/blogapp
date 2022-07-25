@@ -25,6 +25,6 @@ class CommentNotification < Noticed::Base
   end
   #
   def url
-    post_path(Post.find(params[:comment][:post_id]))
+    "#{params[:comment][:post_id]}"
   end
 end
