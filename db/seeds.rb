@@ -17,6 +17,40 @@ User.create(email: 'a.meskhii@gmail.com',
               password_confirmation: 'password',
               username: 'anuki',
               )
+User.create(email: 'a.m5eskhii@gmail.com',
+                password: 'password',
+                password_confirmation: 'password',
+                username: 'anuki',)
+User.create(email: 'a.m6eskhii@gmail.com',
+                  password: 'password',
+                  password_confirmation: 'password',
+                  username: 'anuki',
+                  )
+User.create(email: 'a.m1eskhii@gmail.com',
+                    password: 'password',
+                    password_confirmation: 'password',
+                    username: 'anuki',
+                    )
+                    User.create(email: 'a.me2skhii@gmail.com',
+                      password: 'password',
+                      password_confirmation: 'password',
+                      username: 'anuki',
+                      )
+ User.create(email: 'a.m2eskhii@gmail.com',
+                        password: 'password',
+                        password_confirmation: 'password',
+                        username: 'anuki',
+                        )
+ User.create(email: 'a.m3eskhii@gmail.com',
+                          password: 'password',
+                          password_confirmation: 'password',
+                          username: 'anuki',
+                          )
+User.create(email: 'a.m4eskhii@gmail.com',
+                            password: 'password',
+                            password_confirmation: 'password',
+                            username: 'anuki',
+                            )
 10.times do |x|
   post = Post.create(title: "Title #{x}",
                      body: "Body #{x} Words go here Idk",
