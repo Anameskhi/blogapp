@@ -12,13 +12,14 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    if current_user
     if current_user.id != @post.user_id
     @post.update(views: @post.views + 1)
     end
+  end
     @pagy,@comment= pagy(@post.comments.order(created_at: :desc), items: 5)
     mark_notifications_as_read
   end
-
   # GET /posts/new
   def new
     @post = Post.new

@@ -3,7 +3,7 @@
 <%= render @post %>
 
 
-
+<% if current_user %>
 <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
 <% if pre_like %>
  <%= button_to post_like_path(@post, pre_like), method: :delete ,class: "btn btn-danger mb-2"  do%>
@@ -23,7 +23,7 @@
 <% end %>
  
 <% end %>
-
+<%end%>
 
 
 

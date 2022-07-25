@@ -10,7 +10,8 @@ User.create(email: 'mesxiana3@gmail.com',
             password: 'password',
             password_confirmation: 'password',
             username: 'anuka',
-            role: User.roles[:admin] )
+            role: User.roles[:admin],
+            confirmed_at: Time.now )
 User.create(email: 'a.meskhii@gmail.com',
               password: 'password',
               password_confirmation: 'password',
