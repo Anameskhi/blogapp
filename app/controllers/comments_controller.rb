@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post
@@ -6,18 +8,16 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(comment_params)
     @comment.user = current_user
     if @comment.save
-      flash[:notice] = "comment successfully created"
-      redirect_to post_path(@post)
+      flash[:notice] = 'comment successfully created'
     else
-      flash[:alert] = "comment has not been created"
-      redirect_to post_path(@post)
+      flash[:alert] = 'comment has not been created'
     end
-
+    redirect_to post_path(@post)
   end
 
   def destroy
     @comment = @post.comments.find(params[:id])
-    @comment.destroy 
+    @comment.destroy
     redirect_to post_path(@post)
   end
 
@@ -25,19 +25,20 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html{redirect_to post_url(@post), notice: "Comment has been updated"}
+        format.html { redirect_to post_url(@post), notice: 'Comment has been updated' }
       else
-        format.html{redirect_to post_url(@post), alert: "Comment was not updated"}
+        format.html { redirect_to post_url(@post), alert: 'Comment was not updated' }
       end
     end
   end
 
   private
-   def comment_params
-    params.require(:comment).permit(:body)
-   end
 
-   def set_post
+  def comment_params
+    params.require(:comment).permit(:body)
+  end
+
+  def set_post
     @post = Post.find(params[:post_id])
-   end
+  end
 end

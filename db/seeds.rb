@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -11,80 +13,67 @@ User.create(email: 'mesxiana3@gmail.com',
             password_confirmation: 'password',
             username: 'anuka',
             role: User.roles[:admin],
-            confirmed_at: Time.now )
+            confirmed_at: Time.now)
 User.create(email: 'a.meskhii@gmail.com',
-              password: 'password',
-              password_confirmation: 'password',
-              username: 'anuki',
-              )
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
 User.create(email: 'a.m5eskhii@gmail.com',
-                password: 'password',
-                password_confirmation: 'password',
-                username: 'anuki',)
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
 User.create(email: 'a.m6eskhii@gmail.com',
-                  password: 'password',
-                  password_confirmation: 'password',
-                  username: 'anuki',
-                  )
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
 User.create(email: 'a.m1eskhii@gmail.com',
-                    password: 'password',
-                    password_confirmation: 'password',
-                    username: 'anuki',
-                    )
-                    User.create(email: 'a.me2skhii@gmail.com',
-                      password: 'password',
-                      password_confirmation: 'password',
-                      username: 'anuki',
-                      )
- User.create(email: 'a.m2eskhii@gmail.com',
-                        password: 'password',
-                        password_confirmation: 'password',
-                        username: 'anuki',
-                        )
- User.create(email: 'a.m3eskhii@gmail.com',
-                          password: 'password',
-                          password_confirmation: 'password',
-                          username: 'anuki',
-                          )
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
+User.create(email: 'a.me2skhii@gmail.com',
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
+User.create(email: 'a.m2eskhii@gmail.com',
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
+User.create(email: 'a.m3eskhii@gmail.com',
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
 User.create(email: 'a.m4eskhii@gmail.com',
-                            password: 'password',
-                            password_confirmation: 'password',
-                            username: 'anuki',
-                            )
-                            User.create(email: 'a.m5eskhii@gmail.com',
-                              password: 'password',
-                              password_confirmation: 'password',
-                              username: 'anuki',)
-              User.create(email: 'a.m7eskhii@gmail.com',
-                                password: 'password',
-                                password_confirmation: 'password',
-                                username: 'anuki',
-                                )
-              User.create(email: 'a.m8eskhii@gmail.com',
-                                  password: 'password',
-                                  password_confirmation: 'password',
-                                  username: 'anuki',
-                                  )
-                                  User.create(email: 'a.me9skhii@gmail.com',
-                                    password: 'password',
-                                    password_confirmation: 'password',
-                                    username: 'anuki',
-                                    )
-               User.create(email: 'a.m12eskhii@gmail.com',
-                                      password: 'password',
-                                      password_confirmation: 'password',
-                                      username: 'anuki',
-                                      )
-               User.create(email: 'a.m13eskhii@gmail.com',
-                                        password: 'password',
-                                        password_confirmation: 'password',
-                                        username: 'anuki',
-                                        )
-              User.create(email: 'a.m14eskhii@gmail.com',
-                                          password: 'password',
-                                          password_confirmation: 'password',
-                                          username: 'anuki',
-                                          )
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
+User.create(email: 'a.m5eskhii@gmail.com',
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
+User.create(email: 'a.m7eskhii@gmail.com',
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
+User.create(email: 'a.m8eskhii@gmail.com',
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
+User.create(email: 'a.me9skhii@gmail.com',
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
+User.create(email: 'a.m12eskhii@gmail.com',
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
+User.create(email: 'a.m13eskhii@gmail.com',
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
+User.create(email: 'a.m14eskhii@gmail.com',
+            password: 'password',
+            password_confirmation: 'password',
+            username: 'anuki')
 10.times do |x|
   post = Post.create(title: "Title #{x}",
                      body: "Body #{x} Words go here Idk",

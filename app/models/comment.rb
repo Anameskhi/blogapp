@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Comment < ApplicationRecord
   belongs_to :post
   belongs_to :user
@@ -8,6 +10,7 @@ class Comment < ApplicationRecord
   has_noticed_notifications model_name: 'Notification'
 
   private
+
   def notify_recipient
     CommentNotification.with(comment: self, post: post).deliver_later(post.user)
   end

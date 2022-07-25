@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # To deliver this notification:
 #
 # CommentNotification.with(post: @post).deliver_later(current_user)
@@ -23,8 +25,8 @@ class CommentNotification < Noticed::Base
     @user = User.find(@comment.user_id)
     "#{@user.username} comment on #{@post.title.truncate(10)}"
   end
-  #
+
   def url
-    "#{params[:comment][:post_id]}"
+    (params[:comment][:post_id]).to_s
   end
 end
