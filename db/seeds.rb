@@ -51,6 +51,40 @@ User.create(email: 'a.m4eskhii@gmail.com',
                             password_confirmation: 'password',
                             username: 'anuki',
                             )
+                            User.create(email: 'a.m5eskhii@gmail.com',
+                              password: 'password',
+                              password_confirmation: 'password',
+                              username: 'anuki',)
+              User.create(email: 'a.m7eskhii@gmail.com',
+                                password: 'password',
+                                password_confirmation: 'password',
+                                username: 'anuki',
+                                )
+              User.create(email: 'a.m8eskhii@gmail.com',
+                                  password: 'password',
+                                  password_confirmation: 'password',
+                                  username: 'anuki',
+                                  )
+                                  User.create(email: 'a.me9skhii@gmail.com',
+                                    password: 'password',
+                                    password_confirmation: 'password',
+                                    username: 'anuki',
+                                    )
+               User.create(email: 'a.m12eskhii@gmail.com',
+                                      password: 'password',
+                                      password_confirmation: 'password',
+                                      username: 'anuki',
+                                      )
+               User.create(email: 'a.m13eskhii@gmail.com',
+                                        password: 'password',
+                                        password_confirmation: 'password',
+                                        username: 'anuki',
+                                        )
+              User.create(email: 'a.m14eskhii@gmail.com',
+                                          password: 'password',
+                                          password_confirmation: 'password',
+                                          username: 'anuki',
+                                          )
 10.times do |x|
   post = Post.create(title: "Title #{x}",
                      body: "Body #{x} Words go here Idk",
