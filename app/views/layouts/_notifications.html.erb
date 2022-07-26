@@ -18,7 +18,7 @@
     </li>
   <% elsif @read.count + @unread.count == 0 %>
   <li class="dropdown-item">
-       No notifications yet.
+       <%=t("no_notifications")%>
   </li>
   <%end%>
     </ul>

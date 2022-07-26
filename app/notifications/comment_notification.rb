@@ -27,6 +27,6 @@ class CommentNotification < Noticed::Base
   end
 
   def url
-    (params[:comment][:post_id]).to_s
+    @post
   end
 end
