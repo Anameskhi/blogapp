@@ -15,7 +15,7 @@
  <%= image_tag(@user.avatar_url,  class: "image_size") if @user.avatar? %>
  <div class="card-body">
    <% @posts.each do |post|%>
-     <div>
+   
   
         <div class= "card_body">
         <h5 class="card-title"><%= link_to post.title, post%></h5>
@@ -24,7 +24,7 @@
         <p class="card-footer text-muted"><%= "#{time_ago_in_words(post.created_at)} " %> <%= t("ago")%></p>
         
  
-   </div>
+
    <%end%>
    </div>
 
