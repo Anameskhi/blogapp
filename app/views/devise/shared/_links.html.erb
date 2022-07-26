@@ -11,7 +11,7 @@
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to t("confirmation_instruction"), new_user_confirmation_path(:user_id => @user.id) %><br />
+  <%= link_to t("confirmation_instruction"), new_user_confirmation_path(:user_id => @user.id), class: "btn btn-outline-primary" %><br />
 <% end %>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
