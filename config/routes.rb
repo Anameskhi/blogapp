@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'admin/posts'
       get 'admin/comments'
       get 'admin/users'
+      get 'admin/admin_show_user/:id', to: 'admin#show_user', as: 'admin_show_user'
       get 'admin/show_post/:id', to: 'admin#show_post', as: 'admin_post'
     end
     get 'search', to: 'search#index'
@@ -18,8 +19,8 @@ Rails.application.routes.draw do
 
     get '/about', to: 'pages#about'
     get '/user/:id', to: 'users#show', as: 'user_profile'
-
     root 'pages#home'
+    delete 'user/:id/admin_delete', to: "admin#admin_delete_user", as: :admin_delete_user 
 
     # devise_for :users, controllers: {  }
 

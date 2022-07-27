@@ -8,6 +8,7 @@
     <th scope="col"><%=t("username")%></th>
     <th scope="col"><%=t("email")%></th>
     <th scope="col"><%=t("posts_title")%></th>
+    <th scope="col"><%=t(:delete_account)%></th>
     
   </tr>
   </thead>
@@ -15,10 +16,14 @@
     <% @users.each do |user|%>
     <tr>
     <th scope = "row"><%=user.id%></th>
-    <td><%= link_to user.username.truncate(15), user_profile_path(user) %></td>
+    <td><%= link_to user.username.truncate(15), admin_show_user_path(user) %></td>
     <td><%= user.email %></td>
     <td><%= t("#{user.role}") %></td>
-    
+    <td>
+    <% unless current_user.admin? && current_user.id == user.id %>
+    <%= button_to t("delete_account"), admin_delete_user_path(user), method: :delete, data: { confirm: t("are_you_sure") }, class: "btn btn-outline-danger"%>
+    <% end %>
+    </td>
     </tr>
     <%end%>
   </tbody>

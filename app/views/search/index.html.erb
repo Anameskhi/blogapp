@@ -17,7 +17,7 @@
 <tr>
     <td><%= link_to post.title, post%></td>
     <td><%= post.body.to_plain_text.truncate_words(25)%></td>
-    <td><%= link_to post.user.username%></td> 
+    <td><%= link_to post.user.username,  admin_show_user_path(post.user)%></td> 
     </tr>
 <%end%>
 </tbody>

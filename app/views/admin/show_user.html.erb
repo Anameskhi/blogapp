@@ -9,9 +9,17 @@
 <h6>
  <%= pluralize(@user.posts.size, "Post")%> |
  <%= pluralize(@user.comments.size, "Comment")%> |
- <%= pluralize(@user.views, "View")%> 
+ <%= pluralize(@user.views, "View")%> <br>
+
+ <div>
+
+ <% unless @user.admin? %>
+  <%=button_to t("delete_account"), admin_delete_user_path(@user), method: :delete, data: { confirm: t("are_you_sure") }, class:"btn btn-danger"%>
+ <%end%> 
+ </div>
 
  </h6>
+  
  <%= image_tag(@user.avatar_url,  class: "image_size") if @user.avatar? %>
  <div class="card-body">
    <% @posts.each do |post|%>
@@ -20,7 +28,7 @@
         <div class= "card_body">
         <h5 class="card-title"><%= link_to post.title, post%></h5>
         <p class="card-text"><%= post.body.to_plain_text.truncate_words(100) %></p>
-        <p> <%= (link_to  t("edit") , edit_user_registration_path(@user)) if @user == current_user%> </p>
+        <p> <%= (link_to  t("edit") ,edit_user_registration_path(@user)) if @user == current_user || current_user.admin? %> </p>
         <p class="card-footer text-muted"><%= "#{time_ago_in_words(post.created_at)} " %> <%= t("ago")%></p>
         
  
@@ -30,10 +38,10 @@
 
 
         </div>
-          <%= pagy_bootstrap_nav(@pagy).html_safe%>
-
+        <%= pagy_bootstrap_nav(@pagy).html_safe%>
      </div>
-     
+       
    </div>
+ 
 </div>
 

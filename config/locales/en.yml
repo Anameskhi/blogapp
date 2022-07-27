@@ -98,8 +98,10 @@ en:
   resend_confirmation: "Resend confirmation instructions"
   about_blog: "About Blog Page"
   description: "A blog  is a discussion or informational website published on the World Wide Web consisting of discrete, often informal diary-style text entries (posts). Posts are typically displayed in reverse chronological order, so that the most recent post appears first, at the top of the web page." 
-  edit_post: "Editign Post"
+  edit_post: "Editing Post"
   show_this_post: "Show this post"
   back_to_posts: Back to posts
   reset_password_instruction: Send me reset password instructions
   no_notifications:   No notifications yet
+  delete_account: Delete Account
+  edit_profile: Edit Profile
