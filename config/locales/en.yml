@@ -62,7 +62,6 @@ en:
   show_this_post: "Show this post"
   posted_by: "Posted by"
   created: "Created"
-  
   edited: "Edited"
   new_post: "New Post"
   back_to_posts: "Back to posts"
@@ -105,14 +104,47 @@ en:
   no_notifications:   No notifications yet
   delete_account: Delete Account
   edit_profile: Edit Profile
-  x_hours:
-    one:   "1 hours"
-    other: "%{count} hours"
-  x_minutes:
-    one:   "1 minutes"
-    other: "%{count} minutes"
-  x_seconds:
-    one:   "1 seconds"
-    other: "%{count} seconds"
-  
-  
+  comment_successfully_created: comment successfully created
+  comment_has_not_been_created: comment has not been created
+  comment_has_been_updated: Comment has been updated
+  comment_was_not_updated: Comment was not updated
+  cancel: Cancel
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one:   "1 hours"
+        other: "%{count} hours ago"
+      about_x_months:
+        one: 1 month ago
+        other: "%{count} months ago"
+      about_x_minutes:
+        one:   "1 minutes ago"
+        other: "%{count} minutes ago"
+      about_x_years:
+        one: 1 year ago
+        other: "%{count} years ago"
+      about_x_days:
+        one:   "1 day ago"
+        other: "%{count} days ago"
+      about_x_seconds:
+        one:   "1 seconds ago"
+        other: "%{count} seconds ago"
+      x_hours:
+        one:   "1 hours"
+        other: "%{count} hours ago"
+      x_months:
+        one: 1 month ago
+        other: "%{count} months ago"
+      x_minutes:
+        one:   "1 minutes ago"
+        other: "%{count} minutes ago"
+      x_years:
+        one: 1 year ago
+        other: "%{count} years ago"
+      x_days:
+        one:   "1 day ago"
+        other: "%{count} days ago"
+      x_seconds:
+        one:   "1 seconds ago"
+        other: "%{count} seconds ago"
+      less_than_x_minutes: Less Than 1 Minutes

@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(comment_params)
     @comment.user = current_user
     if @comment.save
-      flash[:notice] = 'comment successfully created'
+      flash[:notice] = t('comment_successfully_created') 
     else
-      flash[:alert] = 'comment has not been created'
+      flash[:alert] = t('comment_has_not_been_created')
     end
     redirect_to post_path(@post)
   end
@@ -25,9 +25,9 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to post_url(@post), notice: 'Comment has been updated' }
+        format.html { redirect_to post_url(@post), notice: t('comment_has_been_updated') }
       else
-        format.html { redirect_to post_url(@post), alert: 'Comment was not updated' }
+        format.html { redirect_to post_url(@post), alert: t('comment_was_not_updated') }
       end
     end
   end

@@ -14,8 +14,8 @@
 
           </div>
          <div class="card-footer text-muted" >
-        <small><%=t("created")%> <%= time_ago_in_words(post.created_at) %> <%=t("ago")%>, 
-        edited <%= time_ago_in_words(post.updated_at) %>  <%=t("ago")%> </small>
+        <small><%=t("created")%> <%= t(time_ago_in_words(post.created_at))%>, 
+        <%=t(:edited)%> <%= t(time_ago_in_words(post.updated_at)) %>  </small>
         </div>
 
         </div>

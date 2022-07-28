@@ -21,7 +21,7 @@
         <h5 class="card-title"><%= link_to post.title, post%></h5>
         <p class="card-text"><%= post.body.to_plain_text.truncate_words(100) %></p>
         <p> <%= link_to  t("edit") , edit_user_registration_path if @user == current_user %> </p>
-        <p class="card-footer text-muted"><%= "#{time_ago_in_words(post.created_at)} " %> <%= t("ago")%></p>
+        <p class="card-footer text-muted"><%=t(:created)%> <%= t(time_ago_in_words(post.created_at))%></p>
         
  
 

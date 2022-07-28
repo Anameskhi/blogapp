@@ -1,4 +1,4 @@
-en:
+ka:
   devise:
     confirmations:
       confirmed: "წარმატებით მოხდა თქვენი ემაილის დასტური"
@@ -61,6 +61,6 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
-  x_minutes:
-    one:   "1 minute"
-    other: "%{count} minutes"
+  date:
+    day_names: [კვირა, ორშაბათი, სამშაბათი, ოთხშაბათი, ხუთშაბათი, პარასკევი, შაბათი]
+    month_names: [დეკემბერი, იანვარი, თებერვალი, მარტი, აპრილი, მაისი, ივნისი, ივლისი, აგვისტო, სექტემბერი, ოქტომბერი, ნოემბერი]

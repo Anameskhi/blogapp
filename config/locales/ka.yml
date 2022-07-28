@@ -29,7 +29,6 @@ ka:
   show_this_post: "პოსტის ნახვა"
   posted_by: "პოსტის ავტორი"
   created: "შეიქმნა"
-  
   edited: "განახლდა"
   new_post: "ახალი პოსტი"
   back_to_posts: "პოსტების გვერდზე დაბრუნება"
@@ -75,13 +74,53 @@ ka:
   no_notifications: შეტყობინება არ არის 
   delete_account: ანგარიშის წაშლა
   edit_profile: ანგარიშის განახლება
-
-  x_hours:
-    one:   "1 საათის წინ"
-    other: "%{count} საათის წინ"
-  x_minutes:
-    one:   "1 წუთის წინ"
-    other: "%{count} წუთის წინ"
-  x_seconds:
-    one:   "1 წამის წინ"
-    other: "%{count} წამის წინ"
+  commented: კომენტარი გაკეთდა
+  comment_successfully_created: კომენტარი წარმატებით შეიქმნა
+  comment_has_not_been_created: კომენტარი არ შეიქმნა
+  comment_has_been_updated: კომენტარი წარმატებით განახლდა
+  comment_was_not_updated: კომენტარი ვერ განახლდა
+  cancel: გაუქმება
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: 1 საათის წინ
+        other: "%{count} საათის წინ"
+      about_x_months:
+        one: 1 თვის წინ
+        other: "%{count} თვის წინ"
+      about_x_minutes:
+        one:   "1 წუთის წინ"
+        other: "%{count} წუთის წინ"
+      about_x_years:
+        one: 1 წლის წინ
+        other: "%{count} წლის წინ"
+      about_x_days:
+        one:   "1 დღის წინ"
+        other: "%{count} დღის წინ"
+      about_x_seconds:
+        one:   "1 წამის წინ"
+        other: "%{count} წამის წინ"
+      x_hours:
+        one: 1 საათის წინ
+        other: "%{count} საათის წინ"
+      x_months:
+        one: 1 თვის წინ
+        other: "%{count} თვის წინ"
+      x_minutes:
+        one:   "1 წუთის წინ"
+        other: "%{count} წუთის წინ"
+      x_years:
+        one: 1 წლის წინ
+        other: "%{count} წლის წინ"
+      x_days:
+        one:   "1 დღის წინ"
+        other: "%{count} დღის წინ"
+      x_seconds:
+        one:   "1 წამის წინ"
+        other: "%{count} წამის წინ"
+      less_than_x_minutes: რამდენიმე წამის წინ
+        
+      
+      
+      
+      

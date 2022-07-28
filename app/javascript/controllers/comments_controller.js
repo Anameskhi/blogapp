@@ -23,13 +23,15 @@ export default class extends Controller {
   }
 
   toggleEditButton(editButton) {
-    if (editButton.innerText === "Edit") {
-      editButton.innerText = "Cancel";
+    if (editButton.innerText === editButton.dataset.edit) {
+      editButton.innerText = editButton.dataset.cancel;
       this.toggleEditButtonClass(editButton);
-    } else {
-      editButton.innerText = "Edit";
+    } 
+    else if(editButton.innerText === editButton.dataset.cancel) {
+      editButton.innerText = editButton.dataset.edit;
       this.toggleEditButtonClass(editButton);
-    }
+    } 
+    
   }
 
   toggleEditButtonClass(editButton) {
