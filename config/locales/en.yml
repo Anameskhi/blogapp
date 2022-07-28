@@ -62,7 +62,7 @@ en:
   show_this_post: "Show this post"
   posted_by: "Posted by"
   created: "Created"
-  ago: "Ago"
+  
   edited: "Edited"
   new_post: "New Post"
   back_to_posts: "Back to posts"
@@ -105,3 +105,14 @@ en:
   no_notifications:   No notifications yet
   delete_account: Delete Account
   edit_profile: Edit Profile
+  x_hours:
+    one:   "1 hours"
+    other: "%{count} hours"
+  x_minutes:
+    one:   "1 minutes"
+    other: "%{count} minutes"
+  x_seconds:
+    one:   "1 seconds"
+    other: "%{count} seconds"
+  
+  

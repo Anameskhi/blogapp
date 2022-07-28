@@ -29,7 +29,7 @@ ka:
   show_this_post: "პოსტის ნახვა"
   posted_by: "პოსტის ავტორი"
   created: "შეიქმნა"
-  ago: "წინ"
+  
   edited: "განახლდა"
   new_post: "ახალი პოსტი"
   back_to_posts: "პოსტების გვერდზე დაბრუნება"
@@ -48,9 +48,9 @@ ka:
   delete: "წაშლა"
   are_you_sure: "დარწმუნებული ხარ?"
   profile_for: "გვერდის შემქმნელია"
-  cancel_my_account: "ექაუნთის წაშლა"
+  cancel_my_account: "ანგარიშის გაუქმება"
   back: "უკან"
-  delete_my_account: "ექაუნთის წაშლა"
+  delete_my_account: "ანგარიშის გაუქმება"
   leave_blank: "(დატოვეთ ცარიელი თუ არ გსურთ შეცვლა)"
   password_confirmation: "გაიმეორეთ პაროლი"
   characters_minimum: "სიმბოლო მინიმუმ"
@@ -74,4 +74,14 @@ ka:
   reset_password_instruction : "პაროლის შეცვლის ინსტრუქციის გაგზავნა მეილზე"
   no_notifications: შეტყობინება არ არის 
   delete_account: ანგარიშის წაშლა
-  edit_profile: ანგარიშის დაედითება
+  edit_profile: ანგარიშის განახლება
+
+  x_hours:
+    one:   "1 საათის წინ"
+    other: "%{count} საათის წინ"
+  x_minutes:
+    one:   "1 წუთის წინ"
+    other: "%{count} წუთის წინ"
+  x_seconds:
+    one:   "1 წამის წინ"
+    other: "%{count} წამის წინ"

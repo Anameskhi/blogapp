@@ -8,9 +8,5 @@ class UsersController < ApplicationController
     if current_user.nil? || ( !current_user.nil? &&  current_user.id != @user.id)
     @user.update(views: @user.views + 1)
     end
-    
-
-
-
   end
 end
