@@ -109,6 +109,8 @@ en:
   comment_has_been_updated: Comment has been updated
   comment_was_not_updated: Comment was not updated
   cancel: Cancel
+  users: Users
+  category: Categories
   datetime:
     distance_in_words:
       about_x_hours:
@@ -148,3 +150,35 @@ en:
         one:   "1 seconds ago"
         other: "%{count} seconds ago"
       less_than_x_minutes: Less Than 1 Minutes
+
+  result:
+      one: '1 result'
+      other: '%{count} results'
+  comment:
+      one: '1 Comment'
+      other: '%{count} Comments'
+  post:
+      one: '1 Post'
+      other: '%{count} Posts'
+  view:
+      one: '1 View'
+      other: '%{count} Views'
+  error:
+      one: '1 Error'
+      other: '%{count} Errors'
+     
+  new_category: New Category
+  Show_this_category: Show this category
+  category: Category
+  categories: Categories
+  back_to_categories: Back to categories
+  edit_this_category: Edit this category
+  destroy_this_category: Destroy this category
+  more: More
+  new_category: New category
+  name: Name
+  create_category: Create category
+  display_in_nav: Display in nav
+  will_paginate:
+    previous_label: "Prev"
+    next_label: "Next"

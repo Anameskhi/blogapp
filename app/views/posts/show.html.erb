@@ -30,10 +30,10 @@
 <% if (current_user && current_user.id == @post.user_id) || current_user&.admin? %>
   <%= link_to t("edit_post"), edit_post_path(@post), class: "btn btn-primary mb-2" %> <br>
   <%= button_to t("destroy_this_post"), @post, method: :delete , class: "btn btn-danger mb-2"%>
-<%else%>
-  <%= link_to "Back to posts", posts_path, class: "btn btn-primary" %>
- 
+
 <%end%>
+  
+
 <div class= "">
  <%= render 'comment/form', post: @post, comment: @post.comments.build,
    submit_label: t("comment")%>
@@ -44,6 +44,7 @@
  %>
  <%end%>
 
+<%= link_to t("back_to_posts"), posts_path, class: "btn btn-secondary" %>
 </div><br>
 
 <%= pagy_bootstrap_nav(@pagy).html_safe%>

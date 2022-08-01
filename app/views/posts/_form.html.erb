@@ -1,7 +1,7 @@
 <%= form_with(model: post) do |form| %>
   <% if post.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <h2><%= I18n.t :error, count: post.errors.count  %> prohibited this post from being saved:</h2>
 
       <ul>
         <% post.errors.each do |error| %>
@@ -15,7 +15,11 @@
     <%= form.label t("title"), style: "display: block" %>
     <%= form.text_field :title , class: "form-control "%>
   </div>
-
+  <div>
+  <%=form.label :category, style: "display: block"%>
+  <%=form.select :category_id, options_for_select(Category.all.order(name: :asc)
+  .collect{|cat| [cat.name, cat.id]}) %>
+  </div>
   <div id="body" class="card-body">
     <%= form.label t("body"), style: "display: block" %>
     <%= form.rich_text_area :body, class: "form-control " %>

@@ -8,6 +8,8 @@
     <th scope="col"><%= t("posts")%></th>
     <th scope="col"><%= t("author")%></th>
     <th scope="col"><%= t("comments")%></th>
+    <th scope="col"><%= t("category")%></th>
+
   </tr>
   </thead>
   <tbody>
@@ -16,7 +18,8 @@
     <th scope = "row"><%=post.id%></th>
     <td><%= link_to post.title.truncate(15), admin_post_path(post) %></td>
     <td><%= link_to post.user.username, admin_show_user_path(post.user) %></td>
-    <td><%= pluralize(post.comments.size, "comment") %></td>
+    <td><%= I18n.t :comment, count: post.comments.size %></td>
+    <td><%= link_to post.category.name, post.category %></td>
     </tr>
     <%end%>
   </tbody>

@@ -1,0 +1,10 @@
+<h1><%=t("edit_this_category") %></h1>
+
+<%= render "form", category: @category %>
+
+<br>
+
+<div>
+  <%= link_to t("Show_this_category"), @category %> |
+  <%= link_to t("back_to_categories"), categories_path %>
+</div>

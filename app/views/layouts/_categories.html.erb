@@ -1,0 +1,15 @@
+
+        <li class = "nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           <%= t("category") %>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+            <% categories.each do |cat| %>
+            <li><%=link_to cat.name, cat, class:"dropdown-item"%></li>
+            <%end%>
+        <li><hr class="dropdown-divider"></li>
+        <li><%=link_to t("more"), categories_path, class:"dropdown-item" %></li>
+        <li><%=link_to t("new_category"), new_category_path, class:"dropdown-item" if current_user&.admin?%></li>
+        </ul>
+        </li>
+     

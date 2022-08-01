@@ -7,9 +7,9 @@
 
 
 <h6>
- <%= pluralize(@user.posts.size, "Post")%> |
- <%= pluralize(@user.comments.size, "Comment")%> |
- <%= pluralize(@user.views, "View")%> 
+ <%= I18n.t :post, count: @user.posts.size %> |
+ <%= I18n.t :comment, count: @user.comments.size %> |
+ <%= I18n.t :view, count: @user.views %> 
 
  </h6>
  <%= image_tag(@user.avatar_url,  class: "image_size") if @user.avatar? %>

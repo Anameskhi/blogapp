@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :categories
   scope '(:locale)', locale: /en|ka/ do
     authenticated :user, ->(user) { user.admin? } do
       get 'admin', to: 'admin#index'

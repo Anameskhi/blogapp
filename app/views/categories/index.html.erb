@@ -1,0 +1,20 @@
+<div class= "container">
+    <div class="row justify-content-md-center">
+         <div class="col-8 mt-4">
+            <div class="card text-center shadow mb-5 bg-white rounded">
+<p style="color: green"><%= notice %></p>
+
+<h1><%= t("categories") %></h1>
+
+<div id="categories">
+  <% @categories.each do |category| %>
+    <%= render category %>
+    
+  <% end %>
+  <%= pagy_bootstrap_nav(@pagy).html_safe%>
+</div>
+</div>
+</div>
+</div>
+
+

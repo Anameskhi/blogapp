@@ -1,0 +1,17 @@
+<div class= "container">
+    <div class="row justify-content-md-center">
+         <div class="col-8 mt-4">
+            <div class="card text-center shadow mb-5 bg-white rounded">
+<h1><%=t("new_category") %></h1>
+
+<%= render "form", category: @category %>
+
+<br>
+
+<div>
+  <%= link_to t("back_to_categories"), categories_path, class: "btn btn-primary" %>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_query
   before_action :set_locale
+  before_action :set_categories
 
   def set_query
     @query = Post.ransack(params[:q])
@@ -25,10 +26,18 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  
+  def set_categories
+    @nav_categories = Category.where(display_in_nav: true).order(:name)
+  end
 
   def set_notifications
     notifications = Notification.where(recipient: current_user).newest_first.limit(9)
     @unread = notifications.unread
     @read = notifications.read
+  end
+
+  def is_admin!
+    redirect_to root_path, alert: "You are not authorized to do that." unless current_user&.admin?
   end
 end

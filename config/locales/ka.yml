@@ -80,6 +80,8 @@ ka:
   comment_has_been_updated: კომენტარი წარმატებით განახლდა
   comment_was_not_updated: კომენტარი ვერ განახლდა
   cancel: გაუქმება
+  users: მომხმარებლები
+  category: კატეგორიები
   datetime:
     distance_in_words:
       about_x_hours:
@@ -119,8 +121,34 @@ ka:
         one:   "1 წამის წინ"
         other: "%{count} წამის წინ"
       less_than_x_minutes: რამდენიმე წამის წინ
-        
+  result:
+      one: '1 შედეგი'
+      other: '%{count} შედეგი'
+  comment:
+      one: '1 კომენტარი'
+      other: '%{count} კომენტარი'
+  post:
+      one: '1 პოსტი'
+      other: '%{count} პოსტი'
+  view:
+      one: '1 ნახვა'
+      other: '%{count} ნახვა'
+  error:
+      one: '1 შეცდომა'
+      other: '%{count} შეცდომა'
       
-      
-      
-      
+  new_category: ახალი კატეგორია
+  Show_this_category: კატეგორიის ნახვა
+  category: კატეგორია
+  categories: კატეგორიები 
+  back_to_categories: კატეგორიების გვერდზე დაბრუნება   
+  edit_this_category: კატეგრორიის განახლება
+  destroy_this_category: კატეგორიის წაშლა
+  more: მეტის ნახვა
+  new_category: ახალი კატეგორია
+  name: სახელი
+  create_category: კატეგორიის შექმნა
+  display_in_nav: მთავარ მენიუში გამოჩენა
+  will_paginate:
+    previous_label: "უკან"
+    next_label: "წინ"
