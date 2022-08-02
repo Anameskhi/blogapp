@@ -1,10 +1,24 @@
-<div class="container">
-  <h1><%=t(:edit_post)%></h1>
+<section class="vh-100 bg-image"
+  style="background-color: CadetBlue">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-15 col-md-15 col-lg-10 col-xl-16">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+            
+  <h1 class="text-uppercase text-center mb-5"><%=t(:edit_post)%></h1>
   <%= render "form", post: @post %>
   <br>
 
-  <div>
-    <%= link_to t("show_this_post"), @post %> |
-    <%= link_to t("back_to_posts"), posts_path %>
+   <div  class="card-body" class="actions">
+    <%= link_to t("show_this_post"), @post , class: "btn btn-outline-success btn-block btn-lg gradient-custom-4 "%> 
+    <%= link_to t("back_to_posts"), posts_path, class: "btn btn-outline-success btn-block btn-lg gradient-custom-4 " %>
   </div>
-</div>
+      </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

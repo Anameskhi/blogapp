@@ -1,59 +1,70 @@
- <div class= "container">
-    <div class="row justify-content-md-center">
-        <div class="col-8 mt-4 ">
-          <div class="card text-center shadow mb-5  bg-white rounded">
-    <h2><%=t("edit_user") %> </h2>
+ <section class="vh-100 bg-image"
+  style="background-color: CadetBlue">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-25 col-md-20 col-lg-10 col-xl-26">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+             
+
+
+   <h2 class="text-uppercase text-center mb-5"><%=t("edit_user") %> </h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
-      <div  class="form-group">
-      <%= f.file_field :avatar, class: "form-control" %>
+      <div  class="card-body">
+      <%= f.file_field :avatar, class:"form-control form-control-lg" %>
       </div>
-      <div  class="form-group">
-        <%= f.label t("username") %><br />
-        <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-control" %>
+      <div   class="card-body">
+        <%= f.label t("username"), class:"form-label" %><br />
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class:"form-control form-control-lg" %>
       </div>
 
-      <div   class="form-group">
+      <div   class="card-body">
         <%= f.label t("email") %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"%>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control form-control-lg"%>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div class="fw-bolder" >Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
 
-      <div   class="form-group">
+      <div   class="card-body">
         <%= f.label t("password") %> <i class="fw-bolder"><%=t("leave_blank")%></i><br />
-        <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+        <%= f.password_field :password, autocomplete: "new-password", class:"form-control form-control-lg" %>
         <% if @minimum_password_length %>
-          <br />
+         
           <em class="fw-bolder"><%= @minimum_password_length %> <%=t("characters_minimum")%></em>
         <% end %>
       </div>
 
-      <div   class="form-group">
+      <div   class="card-body">
         <%= f.label t("password_confirmation") %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control form-control-lg"%>
       </div>
 
-      <div  class="form-group">
-        <%= f.label t("current_password") %> <i class="fw-bolder"><%=t("current_password_neded")%></i><br />
-        <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control"%>
+      <div  class="card-body">
+        <%= f.label t("write_current_password") %> <i class="fw-bolder">(<%=t("current_password_needed")%>)</i><br />
+        <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control form-control-lg"%>
       </div>
 
-      <div class="actions">
-        <%= f.submit t("edit"), class: "btn btn-primary" %>
+      <div class="card-body">
+        <%= f.submit t("edit"), class:"btn btn-success btn-block btn-lg gradient-custom-4 text-body" %>
       </div>
     <% end %>
 
-    <h3><%=t("cancel_my_account")%></h3>
-
-    <p><%= button_to t("delete_my_account"), registration_path(resource_name), data: { confirm: "Are you sure?" }, class: "btn btn-danger", method: :delete %></p>
-
-    <%= link_to t("back"), :back, class: "btn btn-primary" %>
+   
+    <div class="card-body">
+    <p><%= button_to t("delete_my_account"), registration_path(resource_name), data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger btn-block btn-lg gradient-custom-4 ", method: :delete %></p>
+  </div>
+  <div class="card-body">
+    <%= link_to t("back"), :back, class: "btn btn-outline-success btn-block btn-lg gradient-custom-4 " %>
+    </div>
       </div>
     </div>
   </div>
 </div>
+ </div>
 
+</section>

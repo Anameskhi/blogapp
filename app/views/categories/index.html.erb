@@ -1,10 +1,14 @@
-<div class= "container">
-    <div class="row justify-content-md-center">
-         <div class="col-8 mt-4">
-            <div class="card text-center shadow mb-5 bg-white rounded">
-<p style="color: green"><%= notice %></p>
+<section class="vh-100 bg-image"
+  style="background-color: CadetBlue">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-15 col-md-15 col-lg-17 col-xl-26">
+          <div class="card" style="border-radius: 15px;">
+            
 
-<h1><%= t("categories") %></h1>
+
+<h2 class="text-uppercase text-center mb-5"><%= t("categories") %></h2>
 
 <div id="categories">
   <% @categories.each do |category| %>
@@ -16,5 +20,7 @@
 </div>
 </div>
 </div>
-
+  </div>
+  </div>
+</section>
 

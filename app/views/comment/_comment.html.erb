@@ -1,10 +1,6 @@
 <div class = "comment-<%= comment.id %>" style="border: 1px solid black; padding: 1em; margin: 1em;">
 <%= comment.user.username %><br />
-<% if(comment.updated_at - comment.created_at) > 1%>
-   <span> <%=t(:edited)%> <%= time_ago_in_words(comment.updated_at) %> </span>
-<%else%>
-   <span> <%=t(:commented)%> <%= t(time_ago_in_words(comment.created_at)) %></span>
-<%end%>
+
 <% if current_user == comment.user%>
    <div class="btn-group float-end">
     <%= link_to t("edit"), nil, remote: true, class: "btn btn-success",
@@ -29,7 +25,19 @@
     </div>
 <%end%>
 <hr />
-<div id="comment-body-<%=comment.id%>">
-<%= comment.body%>
+<div class="card">
+  <div class="card-header">
+   <% if(comment.updated_at - comment.created_at) > 1%>
+   <span> <%=t(:edited)%> <%= time_ago_in_words(comment.updated_at) %> </span>
+<%else%>
+   <span> <%=t(:commented)%> <%= t(time_ago_in_words(comment.created_at)) %></span>
+<%end%>
+  </div>
+  <div class="card-body" id="comment-body-<%=comment.id%>">
+    
+    <p class="card-text"> <%= comment.body%></p>
+    
+  </div>
 </div>
+
 </div>

@@ -1,9 +1,11 @@
 
 <div id="<%= dom_id category %>">
-  <h2>
+ 
   <% target= action_name.eql?("show")? categories_path : category %>
-  <%=link_to category.name.capitalize, target, class: "btn btn-dark" %>
-  </h2>
+  <div  class="card-body p-0 mb-4" class="row justify-content-md-center">
+  <%=link_to category.name.capitalize, target, class:"btn btn-success btn-block btn-lg gradient-custom-4 w-100" %>
+  </div>
+  
 <% category.posts.includes(:user, :rich_text_body).each do |post| %>
  <%= render 'posts/post', post: post %>
 <%end%>

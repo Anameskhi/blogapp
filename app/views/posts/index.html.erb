@@ -1,26 +1,35 @@
-<p style="color: green"><%= notice %></p>
-  <div class= "">
-    <div class="row justify-content-md-center">
-      <div class="col-8 mt-4">
-        <div class="card text-center shadow mb-5 bg-white rounded">
-          
+<section class="vh-100 bg-image"
+  style="background-color: CadetBlue">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-15 col-md-10 col-lg-15 col-xl-20">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
     <h1 class="row justify-content-md-center"><%= t("posts") %></h1>
-    <%= link_to t("new_post"), new_post_path, class: "btn btn-primary" %>
+    <div id="newpost" class="row justify-content-md-center" >
+    <%= link_to t("new_post"), new_post_path, class:"btn btn-success btn-block btn-lg gradient-custom-4 text-body" %>
+    </div>
     <div id="posts" class="card-body" >
     <% @posts.each do |post| %>
     <%= render post %> 
        
     
     <p style="color:red;text-align:center;" ><%= post.likes.count  %> <%=  (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-    <%= link_to t("show_this_post"),post, class: "btn btn-primary" %>
-      
+    <div class="row md-center">
+    <%= link_to t("show_this_post"),post, class: "btn btn-outline-success btn-block btn-lg gradient-custom-4 " %>
+      </div>
     <% end %>
     </div>
    <%= pagy_bootstrap_nav(@pagy).html_safe%>
-      </div>
-    </dev>
   </div>
-</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 

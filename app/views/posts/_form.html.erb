@@ -1,7 +1,7 @@
 <%= form_with(model: post) do |form| %>
   <% if post.errors.any? %>
     <div style="color: red">
-      <h2><%= I18n.t :error, count: post.errors.count  %> prohibited this post from being saved:</h2>
+      <h2><%= I18n.t :error, count: post.errors.count  %> <%=t("prohibited_this_post_from_being_saved")%></h2>
 
       <ul>
         <% post.errors.each do |error| %>
@@ -11,21 +11,21 @@
     </div>
   <% end %>
 
-  <div id="title" class="card-body">
-    <%= form.label t("title"), style: "display: block" %>
-    <%= form.text_field :title , class: "form-control "%>
+  <div id="title" class="card-body" class="form-outline mb-4">
+    <%= form.label t("title"), style: "display: block", class:"form-label" %>
+    <%= form.text_field :title , class:"form-control form-control-lg" %>
   </div>
-  <div>
-  <%=form.label :category, style: "display: block"%>
+  <div class="card-body" class="form-outline mb-4"  >
+  <%=form.label t(:category), style: "display: block"%>
   <%=form.select :category_id, options_for_select(Category.all.order(name: :asc)
-  .collect{|cat| [cat.name, cat.id]}) %>
+  .collect{|cat| [cat.name, cat.id]}) , { :class => 'form-select' }%>
   </div>
   <div id="body" class="card-body">
     <%= form.label t("body"), style: "display: block" %>
     <%= form.rich_text_area :body, class: "form-control " %>
   </div>
 
-  <div>
-    <%= form.submit t("submit"), class: 'btn btn-primary' %>
+  <div class="card-body">
+    <%= form.submit t("submit"), class:"btn btn-success btn-block btn-lg gradient-custom-4 text-body" %>
   </div>
 <% end %>

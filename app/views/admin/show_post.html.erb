@@ -1,53 +1,56 @@
-<div class="">
- 
-    <div class="row justify-content-md-center">
-      <div class="col-8 mt-4">
-        <div class="card text-center shadow mb-5 bg-white rounded">
-<div class = "container">
+<section class="bg-image"
+  style="background-color: CadetBlue">
+  <div class="mask d-flex align-items-center gradient-custom-3">
+    <div class="container ">
+      <div class="row d-flex justify-content-center align-items-center ">
+        <div class="col-12 col-md-19 col-lg-17 col-xl-36">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              
   <h1 class = "text-center"> <%=t("administrator")%></h1>
   <%= render 'admin/nav_links'%>
   <div class="text-center mt-5">
    <div class="btn-group">
-     <%=link_to t("edit"), edit_post_path(@post), class:"btn btn-secondary"%>
-     <%=button_to t("delete"), @post, method: :delete, data: { confirm: t("are_you_sure") }, class:"btn btn-danger"%>
+     <%=link_to t("edit"), edit_post_path(@post),  class: "btn btn-outline-success btn-block btn-lg gradient-custom-4 "%>
+     <%=button_to t("delete"), @post, method: :delete, data: { confirm: t("are_you_sure") }, class: "btn btn-outline-danger btn-block btn-lg gradient-custom-4 "%>
    </div>
  </div>
  <div class="card-body">
- <p>
+ <p class="text-center card-title">
    <strong><%=t("title")%>:</strong> <%=@post.title %>
  </p>
  <div class="card-body">
-  <p>
+  <p class="text-center card-title">
    <strong><%=t("views")%>:</strong> <%=@post.views %>
  </p>
  </div>
  <div class="card-body">
-  <p>
+  <p class="text-center card-title">
    <strong><%=t("author")%>:</strong>
    <%= "#{@post.user.email} | #{@post.user.username} | #{I18n.t :view, count: @post.views}" %>
  </p>
  </div>
   <div class="row mt-1">
-  <p>
+  <p class="text-center" >
    <strong><%=t("body")%>:</strong><%=@post.body %>
  </p>
  </div>
  <div class="row mt-1">
-  <p>
+  <p class="text-center card-title">
    <strong><%= I18n.t :comment, count: @post.comments.count  %>:</strong>
    <% @post.comments.each do |comment|%>
-      <div class="row mt-1">
-      <%= comment.user.username%>
+      <div class="text-center">
+      <strong><%= comment.user.username%></strong>
       <%= comment.body%>
       </div>
    <%end%>
    
  </p>
 
- </div>
- </div>
-</div>
- </div>
- </div>
-</div>
-</div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -53,8 +53,8 @@ ka:
   leave_blank: "(დატოვეთ ცარიელი თუ არ გსურთ შეცვლა)"
   password_confirmation: "გაიმეორეთ პაროლი"
   characters_minimum: "სიმბოლო მინიმუმ"
-  current_password_neded: "ჩვენ გვჭირდება თქვენი მიმდინარე პაროლი , ცვლილების დასადასტურებლად"
-  current_password: "მიმდინარე პაროლი"
+  current_password_needed: "ჩვენ გვჭირდება თქვენი მიმდინარე პაროლი , ცვლილების დასადასტურებლად"
+  write_current_password: "მიმდინარე პაროლი"
   edit_user: "ინფორმაციის განახლება"
   destroy_this_post: "პოსტის წაშლა"
   edit_post: "პოსტის შეცვლა"
@@ -152,3 +152,11 @@ ka:
   will_paginate:
     previous_label: "უკან"
     next_label: "წინ"
+  create_an_account: ახალი ანგარიშის შექმნა
+  characters_minimum: სიმბოლო მინიმუმ
+  home: მთავარი
+  category_was_successfully_created: კატეგორია წარმატებით შეიქმნა
+  category_was_successfully_updated: კატეგორია წარმატებით განახლდა
+  category_was_successfully_destroyed: კატეგორია წარმატებით წაიშალა
+  submit_comment: კომენტარის დამატება
+  prohibited_this_post_from_being_saved: ვერ მოხდა შენახვა

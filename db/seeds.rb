@@ -74,8 +74,8 @@ User.create(email: 'a.m14eskhii@gmail.com',
             password: 'password',
             password_confirmation: 'password',
             username: 'anuki')
-category = Category.first_or_create!(name: "Uncategorized",display_in_nav: true)
-Category.first_or_create!(name: "Cars",display_in_nav: false)
+category = Category.create!(name: "Uncategorized",display_in_nav: true)
+Category.first_or_create!(name: "Cars",display_in_nav: true)
 Category.first_or_create!(name: "Bikes",display_in_nav: true)
 Category.first_or_create!(name: "Boats",display_in_nav: true)
 

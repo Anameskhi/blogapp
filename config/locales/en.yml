@@ -87,7 +87,7 @@ en:
   leave_blank: "(leave blank if you don't want to change it)"
   password_confirmation: "Password Confirmation"
   characters_minimum: "Characters minimum"
-  current_password_neded: "we need your current password to confirm your changes"
+  current_password_needed: "we need your current password to confirm your changes"
   current_password: "Current Password"
   edit_user: "Edit User"
   destroy_this_post: "Destroy this post"
@@ -182,3 +182,11 @@ en:
   will_paginate:
     previous_label: "Prev"
     next_label: "Next"
+  create_an_account: Create an account
+  characters_minimum: characters minimum
+  home: Home
+  category_was_successfully_created: Category was successfully created
+  category_was_successfully_updated: Category was successfully updated
+  category_was_successfully_destroyed: Category was successfully destroyed
+  submit_comment: Submit comment
+  prohibited_this_post_from_being_saved: Prohibited this post from being saved
