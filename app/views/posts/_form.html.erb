@@ -15,16 +15,18 @@
     <%= form.label t("title"), style: "display: block", class:"form-label" %>
     <%= form.text_field :title , class:"form-control form-control-lg" %>
   </div>
-  <div class="card-body" class="form-outline mb-4"  >
+  <div id = "select" class="card-body" class="form-outline mb-4"  >
   <%=form.label t(:category), style: "display: block"%>
   <%=form.select :category_id, options_for_select(Category.all.order(name: :asc)
-  .collect{|cat| [cat.name, cat.id]}) , { :class => 'form-select' }%>
+  .collect{|cat| [cat.name, cat.id]}) , { :class => 'form-select' }, class:"form-select form-select-sm", aria_label:".form-select-sm example"%>
   </div>
   <div id="body" class="card-body">
     <%= form.label t("body"), style: "display: block" %>
     <%= form.rich_text_area :body, class: "form-control " %>
   </div>
-
+<div id= "select" class="card-body" class="form-outline mb-4 "  >
+<%= form.select :visibility, [['Public', true], ['Private', false]],{ :class => 'form-select ' }, class:"form-select form-select-sm ", aria_label:".form-select-sm example"%>
+</div>
   <div class="card-body">
     <%= form.submit t("submit"), class:"btn btn-success btn-block btn-lg gradient-custom-4 text-body" %>
   </div>

@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  after_create :register_customer
+  #after_create :register_admin
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :likes, dependent: :destroy
@@ -31,11 +33,32 @@ class User < ApplicationRecord
     end
   end
 
-  
+  def update_subscription(value)
+    update_attribute :subscribed, value
+  end
+
+  def subscribed?
+    # !!self.subscribed == true
+    true
+  end
 
   private
 
   def set_default_role
     self.role ||= :user
   end
+
+  def register_customer
+   request =  Stripe::Customer.create({
+      email: email
+    })
+    
+    update_attribute :customer_id, request[:id]
+  end
+
+  # def register_admin
+  #   if email == "mesxiana3@gmail.com"
+  #     update_attribute :admin, true
+  #   end
+  # end
 end

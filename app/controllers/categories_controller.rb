@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   before_action :is_admin!, except: %i[show index]
   # GET /categories or /categories.json
   def index
-    @pagy,@categories = pagy(Category.all.order(name: :asc), items: 1)
+    @categories = Category.all.order(name: :asc)
   end
 
   # GET /categories/1 or /categories/1.json

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include AuthorizationHelper
   include Pagy::Backend
   protect_from_forgery with: :exception, prepend: true
   before_action :set_notifications, if: :current_user

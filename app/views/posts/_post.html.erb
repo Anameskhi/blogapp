@@ -5,7 +5,7 @@
         <div class="card text-center shadow mb-5 bg-white rounded">
           
           <div class="card-body">
-          <h6><%=t("posted_by") %> <%= link_to post.user.username ,user_profile_path(post.user), class: "card-title" %></h6>
+          <h6><%=t("posted_by") %> <%= link_to post.user.username ,user_profile_path(post.user), class:"btn btn-dark" %></h6>
            <h6 class="card-title"><%= I18n.t :view, count: post.views  %></h6>
            <h4 class="card-title"><%= post.title %></h4>
           <div class="card-text">

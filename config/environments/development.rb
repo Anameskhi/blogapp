@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 require 'active_support/core_ext/integer/time'
-
+require 'stripe'
 Rails.application.configure do
+  Stripe.api_key = Rails.application.credentials.secret_key
+
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.raise_delivery_errors = true

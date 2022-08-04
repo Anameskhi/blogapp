@@ -1,21 +1,20 @@
-<section class="vh-100 bg-image"
+<section class=" vh-100 bg-image"
   style="background-color: CadetBlue">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-15 col-md-15 col-lg-17 col-xl-26">
+        <div class="col-5 col-md-5 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px;">
             
 
 
 <h2 class="text-uppercase text-center mb-5"><%= t("categories") %></h2>
 
-<div id="categories">
+<div class= "card-body mb-5 col-md-12 text-center" id="categories">
   <% @categories.each do |category| %>
-    <%= render category %>
-    
+    <%= link_to category.name.capitalize,category, class:" btn btn-outline-secondary btn-block btn-lg gradient-custom-4 " %> 
   <% end %>
-  <%= pagy_bootstrap_nav(@pagy).html_safe%>
+ 
 </div>
 </div>
 </div>

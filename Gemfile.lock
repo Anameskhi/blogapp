@@ -271,6 +271,7 @@ GEM
     ssrf_filter (1.0.7)
     stimulus-rails (1.1.0)
       railties (>= 6.0.0)
+    stripe (7.0.0)
     strscan (3.0.3)
     telephone_number (1.4.16)
     thor (1.2.1)
@@ -329,6 +330,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets-rails
   stimulus-rails
+  stripe
   telephone_number
   turbo-rails
   tzinfo-data

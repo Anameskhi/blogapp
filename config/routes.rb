@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :subscriptions, only: %i[new create]
   resources :categories
   scope '(:locale)', locale: /en|ka/ do
     authenticated :user, ->(user) { user.admin? } do
@@ -11,11 +12,22 @@ Rails.application.routes.draw do
       get 'admin/admin_show_user/:id', to: 'admin#show_user', as: 'admin_show_user'
       get 'admin/show_post/:id', to: 'admin#show_post', as: 'admin_post'
     end
+
+    authenticated :user, ->(user) { user.subscribed? } do
+      get 'premium/posts', to: 'posts#premium'
+    end
+
     get 'search', to: 'search#index'
 
     resources :posts do
       resources :comments
       resources :likes
+    end
+
+    namespace :api do
+      namespace :v1 do
+        post "/webhook", to: "stripe_subscriptions#webhook"
+      end
     end
 
     get '/about', to: 'pages#about'

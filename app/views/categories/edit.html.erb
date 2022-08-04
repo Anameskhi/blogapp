@@ -1,10 +1,25 @@
-<h1><%=t("edit_this_category") %></h1>
+<section class=" vh-100 bg-image"
+  style="background-color: CadetBlue">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-25 col-md-15 col-lg-27 col-xl-36">
+          <div class="card" style="border-radius: 15px;">
+            
+
+<h2 class="text-uppercase text-center mb-5"><%=t("edit_this_category") %></h2>
 
 <%= render "form", category: @category %>
 
 <br>
 
-<div>
-  <%= link_to t("Show_this_category"), @category %> |
-  <%= link_to t("back_to_categories"), categories_path %>
+<div class="card-body">
+  <%= link_to t("Show_this_category"), @category, class:" btn btn-outline-success btn-block btn-lg gradient-custom-4 " %> 
+  <%= link_to t("back_to_categories"), categories_path, class:" btn btn-outline-secondary btn-block btn-lg gradient-custom-4 " %>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>

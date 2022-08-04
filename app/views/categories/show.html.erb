@@ -9,16 +9,16 @@
             
 
 
-
+<%= render @category %>
 <% if current_user&.admin? %>
-  <%= link_to t("edit_this_category"), edit_category_path(@category), class: "btn btn-outline-success btn-block btn-lg gradient-custom-4 float-start mb-4" %> 
+  <%= link_to t("edit_this_category"), edit_category_path(@category), class: "btn btn-outline-success btn-block btn-lg gradient-custom-4  mb-4" %> <br>
   <%= button_to t("destroy_this_category"), @category, method: :delete, class:"btn btn-outline-danger btn-block btn-lg gradient-custom-4 float-end",  :form_class => "btn mb-4 block p-0 float-end" %>
 
 <%end%>
-<%= render @category %>
+
 
 <div class="card-body p-0 mb-4">
-  <%= link_to t("back_to_categories"), categories_path,class: "btn btn-outline-success btn-block btn-lg gradient-custom-4 " %>
+  <%= link_to t("back_to_categories"), categories_path,class: "btn btn-outline-secondary btn-block btn-lg gradient-custom-4 " %>
   
 </div>
   <%= pagy_bootstrap_nav(@pagy).html_safe%>

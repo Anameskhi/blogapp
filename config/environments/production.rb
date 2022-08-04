@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 require 'active_support/core_ext/integer/time'
-
+require 'stripe'
 Rails.application.configure do
+  Stripe.api_key = Rails.application.credentials.secret_key
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

@@ -4,15 +4,24 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy vote]
   before_action :authenticate_user!, except: %i[show index vote]
   respond_to :js, :json, :html
+  # before_action :subscribed_filter, only: :show
+  before_action :admin_filter, only: %i[ new edit create update destroy]
 
   # GET /posts or /posts.json
   def index
-    @pagy, @posts = pagy(Post.all.order(created_at: :desc), items: 5)
+    @pagy, @posts = pagy(Post.where(visibility: true).order(created_at: :desc), items: 5)
+  end
+
+  def premium
+    @pagy, @posts = pagy(Post.where(visibility: false).order(created_at: :desc), items: 5)
+    render "posts/index"
   end
 
   # GET /posts/1 or /posts/1.json
   def show
+    redirect_to root_path if @post.visibility == false && current_user.subscribed? == false
     @post.update(views: @post.views + 1) if current_user && (current_user.id != @post.user_id)
+    
     @pagy, @comment = pagy(@post.comments.order(created_at: :desc), items: 5)
     mark_notifications_as_read
   end
@@ -83,7 +92,7 @@ class PostsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def post_params
-    params.require(:post).permit(:title, :body, :category_id)
+    params.require(:post).permit(:title, :body, :category_id, :visibility)
   end
 
   def  mark_notifications_as_read

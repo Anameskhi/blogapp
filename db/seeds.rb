@@ -75,13 +75,14 @@ User.create(email: 'a.m14eskhii@gmail.com',
             password_confirmation: 'password',
             username: 'anuki')
 category = Category.create!(name: "Uncategorized",display_in_nav: true)
-Category.first_or_create!(name: "Cars",display_in_nav: true)
-Category.first_or_create!(name: "Bikes",display_in_nav: true)
-Category.first_or_create!(name: "Boats",display_in_nav: true)
+Category.create!(name: "Cars",display_in_nav: true)
+Category.create!(name: "Bikes",display_in_nav: true)
+Category.create!(name: "Boats",display_in_nav: true)
 
 10.times do |x|
   post = Post.create(title: "Title #{x}",
                      body: "Body #{x} Words go here Idk",
                      user_id: User.first.id,
-                     category: category)
+                     category: category,
+                    )
 end
