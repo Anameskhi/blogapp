@@ -16,9 +16,11 @@ Rails.application.routes.draw do
     authenticated :user, ->(user) { user.subscribed? } do
       get 'premium/posts', to: 'posts#premium'
     end
+    get 'vip/user', to: 'checkouts#vip'
 
     get 'search', to: 'search#index'
-
+    
+    
     resources :posts do
       resources :comments
       resources :likes

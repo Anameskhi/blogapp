@@ -9,4 +9,5 @@ class UsersController < ApplicationController
     @user.update(views: @user.views + 1)
     end
   end
+
 end
