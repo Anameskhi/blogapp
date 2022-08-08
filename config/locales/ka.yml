@@ -20,7 +20,7 @@ ka:
   sign_in_with_google: "შესვლა გუგლით"
   show_profile: "პროფილის ჩვენება"
   admin: "ადმინი"
-  edit_profile: "პროფილის შეცვლა"
+  edit_profile: "პროფილის განახლება"
   log_out: "გამოსვლა"
   forgot_your_password: "დაგავიწყდა პაროლი?"
   confirmation_instruction: "თანხმობის თავიდან გაგზავნა მეილზე"
@@ -164,3 +164,6 @@ ka:
   Posts: პოსტები
   Comments: კომენტარები
   Users: მომხმარებლები
+  change_your_password: პაროლის შეცვლა
+  new_password: ახალი პაროლი
+  change_my_password: პაროლის შეცვლა

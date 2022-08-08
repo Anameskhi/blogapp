@@ -1,7 +1,11 @@
-<div class= "container">
-    <div class="row justify-content-md-center">
-        <div class="col-8 mt-4 ">
-          <div class="card text-center shadow mb-5  bg-white rounded">
+<section class="vh-100 bg-image"
+  style="background-color: CadetBlue">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-19 col-lg-14 col-xl-36">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
 <h2><%= t("resend_confirmation")%></h2>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post}) do |f| %>
@@ -10,10 +14,10 @@
   <div class="field">
     <%= f.label t("email") %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control"%>
-  </div>
+  </div><br>
 
   <div class="actions">
-    <%= f.submit t("resend_confirmation"), class: "mt-2 mb-4 btn btn-primary" %>
+    <%= f.submit t("resend_confirmation"),  class:"btn btn-success btn-block btn-lg gradient-custom-4 text-body" %>
   </div>
 <% end %>
 
@@ -22,3 +26,6 @@
     </div>
   </div>
 </div>
+  </div>
+</div>
+</section>

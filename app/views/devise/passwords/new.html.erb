@@ -1,7 +1,11 @@
- <div class= "container">
-    <div class="row justify-content-md-center">
-          <div class="col-8 mt-4">
-            <div class="card text-center shadow mb-5 bg-white rounded">
+<section class="vh-100 bg-image"
+  style="background-color: CadetBlue">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
 <h2><% t("forgot_your_password") %></h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -9,11 +13,11 @@
 
   <div class="field">
     <%= f.label t(:email) %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",  class:"form-control form-control-lg" %>
   </div><br>
 
   <div class="actions">
-    <%= f.submit t("reset_password_instruction") %>
+    <%= f.submit t("reset_password_instruction"), class:"btn btn-success btn-block btn-lg gradient-custom-4 text-body" %>
   </div><br>
 <% end %>
 
@@ -22,3 +26,6 @@
 </div>
 </div>
 </div>
+</div>
+</div>
+</section>

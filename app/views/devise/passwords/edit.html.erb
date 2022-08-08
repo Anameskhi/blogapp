@@ -1,28 +1,32 @@
-<div class= "container">
-    <div class="row justify-content-md-center">
-        <div class="col-8 mt-4 ">
-          <div class="card text-center shadow mb-5  bg-white rounded">
-<h2>Change your password</h2>
+<section class="vh-100 bg-image"
+  style="background-color: CadetBlue">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+<h2><%=t("change_your_password")%></h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
 
   <div class="field">
-    <%= f.label :password, "New password" %><br />
+    <%= f.label :password, t("new_password") %><br />
     <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+      <em>(<%= @minimum_password_length %> <%=t("characters_minimum")%>)</em><br />
     <% end %>
     <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+    <%= f.label :password_confirmation, t("password_confirmation") %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control form-control-lg" %>
   </div>
 
   <div class="mt-2 mb-4 actions">
-    <%= f.submit "Change my password", class: "btn btn-primary"%><br>
+    <%= f.submit t("change_my_password"), class: "btn btn-primary",  class:"btn btn-success btn-block btn-lg gradient-custom-4 text-body"%><br>
   </div>
 <% end %>
 
@@ -31,3 +35,6 @@
     </div>
   </div>
 </div>
+  </div>
+</div>
+</section>
