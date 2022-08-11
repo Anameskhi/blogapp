@@ -89,3 +89,4 @@ gem 'mini_magick'
 gem 'pagy'
 gem 'telephone_number'
 gem 'stripe'
+gem "pay", "~> 5.0"

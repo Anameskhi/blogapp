@@ -1,3 +1,4 @@
+<% if !current_user.subscribed? %>
 <section class="pricing py-5">
   <div class="container">
     <div class="row">
@@ -22,8 +23,14 @@
               <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status
                 Reports</li>
             </ul>
-            <div class="d-grid">
-              <a href="#" class="btn btn-primary text-uppercase">Button</a>
+            <div class="d-grid"  >
+            
+              <%= render partial: 'pay/stripe/checkout_button', locals: {
+                session: @checkout_session1,
+                title: "Checkout",
+                class: "btn btn-success btn-block btn-lg gradient-custom-4 text-body"
+              } %>
+             
             </div>
           </div>
         </div>
@@ -47,7 +54,11 @@
                 Reports</li>
             </ul>
             <div class="d-grid">
-              <a href="#" class="btn btn-primary text-uppercase">Button</a>
+             <%= render partial: 'pay/stripe/checkout_button', locals: {
+                session: @checkout_session2,
+                title: "Checkout",
+                class: "btn btn-success btn-block btn-lg gradient-custom-4 text-body"
+              } %>
             </div>
           </div>
         </div>
@@ -72,11 +83,28 @@
                 <li><span class="fa-li"><i class="fas fa-check"></i></span>Monthly Status Reports</li>
             </ul>
             <div class="d-grid">
-              <a href="#" class="btn btn-primary text-uppercase">Button</a>
-            </div>
+ <%= render partial: 'pay/stripe/checkout_button', locals: {
+                session: @checkout_session3,
+                title: "Checkout",
+                class: "btn btn-success btn-block btn-lg gradient-custom-4 text-body"
+              } %>            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+<%else%>
+
+ 
+<div class="container">
+
+
+  <br>
+  <div class="card bg-white text-black">
+    <div class="card-body"><strong><h2 class=" text-center mb-5"><%=t("vip_customer")%></h2></strong></div>
+  
+        <%=link_to t("click_here_to_show_private_posts") ,premium_posts_path,  class:"text-center btn btn-success btn-block btn-lg gradient-custom-4 text-body"%>
+      
+  </div>
+<%end%>

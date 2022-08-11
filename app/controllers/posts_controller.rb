@@ -8,13 +8,9 @@ class PostsController < ApplicationController
   before_action :admin_filter, only: %i[ new edit create update destroy]
 
   # GET /posts or /posts.json
-  def index
-    @pagy, @posts = pagy(Post.where(visibility: true).order(created_at: :desc), items: 5)
-  end
 
-  def premium
-    @pagy, @posts = pagy(Post.where(visibility: false).order(created_at: :desc), items: 5)
-    render "posts/index"
+  def new
+    @post = Post.new
   end
 
   # GET /posts/1 or /posts/1.json
@@ -25,11 +21,18 @@ class PostsController < ApplicationController
     @pagy, @comment = pagy(@post.comments.order(created_at: :desc), items: 5)
     mark_notifications_as_read
   end
+  
+  def index
+    @pagy, @posts = pagy(Post.where(visibility: true).order(created_at: :desc), items: 5)
+  end
+
+  def premium
+    @pagy, @posts = pagy(Post.where(visibility: false).order(created_at: :desc), items: 5)
+    render "posts/index"
+  end
 
   # GET /posts/new
-  def new
-    @post = Post.new
-  end
+  
 
   # GET /posts/1/edit
   def edit; end

@@ -9,7 +9,7 @@ require 'stripe'
 # and recreated between test runs. Don't rely on the data there!
 
 Rails.application.configure do
-  Stripe.api_key = Rails.application.credentials.secret_key
+  Stripe.api_key = Rails.application.credentials.private_key
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Turn false under Spring and add config.action_view.cache_template_loading = true.

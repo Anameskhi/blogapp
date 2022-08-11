@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :notifications, as: :recipient, dependent: :destroy
+  pay_customer stripe_attributes: :stripe_attributes
 
   enum role: %i[user admin]
   after_initialize :set_default_role, if: :new_record?
@@ -33,13 +34,22 @@ class User < ApplicationRecord
     end
   end
 
+
   def update_subscription(value)
     update_attribute :subscribed, value
   end
 
   def subscribed?
-    # !!self.subscribed == true
-    true
+    !!self.subscribed == true
+  end
+
+  def stripe_attributes(pay_customer)
+    {
+      metadata: {
+        pay_customer_id: pay_customer.id,
+        user_id: pay_customer.owner_id
+      }
+    }
   end
 
   private

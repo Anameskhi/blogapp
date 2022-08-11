@@ -197,3 +197,9 @@ en:
   change_your_password: Change your password
   new_password: New password
   change_my_password: change my password
+  checkout: Checkout
+  vip_successfully_created: Payment for VIP status has been completed successfully
+  vip_customer: You are already VIP customer, That means that you can show private posts
+  click_here_to_show_private_posts: Click here to show private posts
+  you_are_already_vip: You are already vip user !
+  subscription_success: Subscription success!
