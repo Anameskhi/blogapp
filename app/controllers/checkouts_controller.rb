@@ -31,6 +31,7 @@ class CheckoutsController < ApplicationController
   end
 
   def success
+
     if params['session_id'].nil?
       redirect_to root_path
     else
@@ -43,6 +44,8 @@ class CheckoutsController < ApplicationController
     else
       current_user.subscribed = true
       current_user.save!
+      days = (Time.at(@subscription['current_period_end']) - Time.at(@subscription['current_period_start'])).to_i
+      FirstJob.set(wait_until: Time.now + days.days).perform_later current_user.id
       redirect_to premium_posts_path, notice: t("subscription_success")
    end
     # @line_items = Stripe::Checkout::Session.list_line_items(params[:session_id])
