@@ -20,6 +20,7 @@ class User < ApplicationRecord
   after_initialize :set_default_role, if: :new_record?
 
   has_one_attached :avatar
+  has_many :places, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
   def self.from_omniauth(auth)

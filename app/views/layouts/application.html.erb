@@ -11,6 +11,8 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <script src="https://js.stripe.com/v3"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials[:MAPS_API_KEY]%>&libraries=places&callback=dispatchMapsEvent" async defer data-turbolinks-eval="false"></script>
+
   </head>
 
   <body>

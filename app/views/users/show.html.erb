@@ -17,6 +17,17 @@
 
  </h6>
  <%= image_tag(@user.avatar_url,  class: "image_size") if @user.avatar? %>
+ <% if (current_user && current_user.id == @user.id) || current_user&.admin? %>
+ <%=link_to new_place_path, type:"button", class:"btn btn-success" do %>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
+</svg>
+<%= 'Add Adress'%>
+    <%end%>    
+    <%end%>     
+    
+  <%=link_to "Show User Adresses",user_places_path(@user.id) , type: "button", class: "btn btn-success" %>
+
  <div class="card-body">
    <% @posts.each do |post|%>
    
@@ -26,9 +37,6 @@
         <p class="text-center card-text"><%= post.body.to_plain_text.truncate_words(100) %></p>
         <p class="text-center card-text"> <%= link_to  t("edit") , edit_user_registration_path if @user == current_user %> </p>
         <p class="text-center card-footer text-muted"><%=t(:created)%> <%= t(time_ago_in_words(post.created_at))%></p>
-        
- 
-
    <%end%>
    </div>
 

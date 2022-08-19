@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index vote]
   respond_to :js, :json, :html
   # before_action :subscribed_filter, only: :show
-  before_action :admin_filter, only: %i[ new edit create update destroy]
+  #before_action :admin_filter, only: %i[ new edit create update destroy]
 
   # GET /posts or /posts.json
 

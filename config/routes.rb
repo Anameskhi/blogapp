@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :places, except: %i[index]
   resources :subscriptions, only: %i[new create]
   resources :categories
   namespace :api do
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
     end
  
     get 'checkout/success', to: 'checkouts#success' 
+    get 'places/:id', to: 'places#user_places', as: :user_places
 
 
     get 'search', to: 'search#index'

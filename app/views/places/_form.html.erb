@@ -1,0 +1,46 @@
+
+<%= form_with model: place, locale: true, data:{
+                          controller: :maps,
+                          action: "google-maps-callback@window->maps#initializeMap"
+                          } do |form| %>
+  <% if place.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(place.errors.count, "error") %> prohibited this place from being saved:</h2>
+
+      <ul>
+        <% place.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="card-body" >
+    <%= form.label :name %>
+    <%= form.text_field :name,class:"form-control form-control-lg" %>
+  </div>
+  <div class="card-body" >
+    <%= form.label :search %>
+    <%= form.search_field :search, name: nil, class:"form-control form-control-lg", data: {target: "maps.field", action: "keydown->maps#preventSubmit"} %>
+  </div>
+
+  <div class="card-body" >
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude, class:"form-control form-control-lg",  data: {target: "maps.latitude"}  %>
+  </div>
+
+  <div class="card-body" >
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude, class:"form-control form-control-lg", data: {target: "maps.longitude"}   %>
+  </div>
+  <div  class="card-body" class="form-outline mb-4 "  >
+<%= content_tag :div, nil, data: {target: "maps.map"}, class: 'map'%>
+</div>
+  <div class="card-body" >
+    <%= form.submit t("add_place"), class:"btn btn-success btn-block btn-lg gradient-custom-4 text-body"  %>
+  </div>
+<% end %>
+
+</div>
+
+
