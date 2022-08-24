@@ -10,6 +10,7 @@ export default class extends Controller{
    }
   }
   initializeMap(){
+    console.assertlog('map');
     this.map()
     this.marker()
     this.autocomplete()
