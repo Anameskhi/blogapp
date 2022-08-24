@@ -11,7 +11,7 @@ class Api::V1::StripeSubscriptionsController < ActionController::API
       event = Stripe::Webhook.construct_event(
         payload, sig_header, webhook_secret
       )
-    rescue JSON::parserError =>
+    rescue JSON::parserError
       status 400
     rescue Stripe::SignitureVerificationError
       puts "Webhook verification failed"
@@ -29,14 +29,14 @@ class Api::V1::StripeSubscriptionsController < ActionController::API
   user = User.find_by_customer_id(data_object['customer'])
 
   case event.type
-  when 'checkout.session.completed'
-  user.update_subscription true
-  when 'invoice.paid'
-   nil
-  when 'invoice.payment_failed'
-    user.update_subscription false
-  else
-    puts "Unhandled event type: #{event.type}"
+    when 'checkout.session.completed'
+    user.update_subscription true
+    when 'invoice.paid'
+    nil
+    when 'invoice.payment_failed'
+      user.update_subscription false
+    else
+      puts "Unhandled event type: #{event.type}"
   end
 
   render :ok
