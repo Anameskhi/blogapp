@@ -5,8 +5,8 @@ export default class extends Controller{
 
   connect(){
    if(typeof(google) != "undefinded"){
-     this.initializeMap()
-
+     this.initializeMap();
+     console.log('initialize map');
    }
   }
   initializeMap(){
@@ -28,6 +28,7 @@ export default class extends Controller{
     return this._map
   }
   marker(){
+    console.log('marker');
     if(this._marker == undefined){
       this._marker = new google.maps.Marker({
         map: this.map(),
@@ -45,6 +46,7 @@ export default class extends Controller{
   }
   autocomplete(){
     if(this._autocomplete == undefined){
+      console.log('authocompalate');
       this._autocomplete = new google.maps.places.Autocomplete(this.fieldTarget)
       this._autocomplete.bindTo('bounds', this.map())
       this._autocomplete.setFields(['address_components', 'geometry', 'icon', 'name'])
@@ -54,6 +56,7 @@ export default class extends Controller{
   }
 
   locationChanged(){
+    console.log('place')
     let place = this.autocomplete().getPlace()
     if(!place.geometry){
       window.alert("No details available for input: '"+ place.name + "'");
