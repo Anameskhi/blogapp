@@ -204,3 +204,20 @@ en:
   you_are_already_vip: You are already vip user !
   subscription_success: Subscription success!
   add_place: Add Place
+  Edit_this_adress: Edit this adress
+  Show_this_adress: Show this adress
+  Add_New_Adress: Add New Adress
+  Back_to_adresses: Back to adresses
+  longitude: longitude
+  latitude: latitude
+  New_Adress: New Adress
+  s_adresses: "'s Adresses"
+  Show_User_Adresses: Show User Adresses
+  Adress_name: Adress name 
+  Destroy_this_adress: Destroy this adress
+  Place_was_successfully_created: Place was successfully created.
+  Place_was_successfully_destroyed: Place was successfully destroyed.
+  Place_was_successfully_updated: Place was successfully updated.
+  Checkout: Checkout
+  Month: Month
+

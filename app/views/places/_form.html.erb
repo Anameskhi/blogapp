@@ -16,21 +16,21 @@
   <% end %>
 
   <div class="card-body" >
-    <%= form.label :name %>
+    <%= form.label t(:name) %>
     <%= form.text_field :name,class:"form-control form-control-lg" %>
   </div>
   <div class="card-body" >
-    <%= form.label :search %>
+    <%= form.label t(:search) %>
     <%= form.search_field :search, name: nil, class:"form-control form-control-lg", data: {target: "maps.field", action: "keydown->maps#preventSubmit"} %>
   </div>
 
   <div class="card-body" >
-    <%= form.label :latitude %>
+    <%= form.label t(:latitude) %>
     <%= form.text_field :latitude, class:"form-control form-control-lg",  data: {target: "maps.latitude"}  %>
   </div>
 
   <div class="card-body" >
-    <%= form.label :longitude %>
+    <%= form.label t(:longitude)%>
     <%= form.text_field :longitude, class:"form-control form-control-lg", data: {target: "maps.longitude"}   %>
   </div>
   <div  class="card-body" class="form-outline mb-4 "  >

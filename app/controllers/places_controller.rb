@@ -8,7 +8,8 @@ class PlacesController < ApplicationController
 
   # GET /places/1 or /places/1.json
   def show
-    @user = User.find(params[:id])
+    @place = Place.find( params[:id])
+    @user = @place.user
   end
 
   # GET /places/new
@@ -26,7 +27,7 @@ class PlacesController < ApplicationController
 
     respond_to do |format|
       if @place.save
-        format.html { redirect_to place_url(@place), notice: "Place was successfully created." }
+        format.html { redirect_to place_url(@place), notice: t("Place_was_successfully_created") }
         format.json { render :show, status: :created, location: @place }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +40,7 @@ class PlacesController < ApplicationController
   def update
     respond_to do |format|
       if @place.update(place_params)
-        format.html { redirect_to place_url(@place), notice: "Place was successfully updated." }
+        format.html { redirect_to place_url(@place), notice: t("Place_was_successfully_updated") }
         format.json { render :show, status: :ok, location: @place }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,14 +54,16 @@ class PlacesController < ApplicationController
     @place.destroy
 
     respond_to do |format|
-      format.html { redirect_to places_url, notice: "Place was successfully destroyed." }
+      format.html { redirect_to user_places_path(current_user), notice: t("Place_was_successfully_destroyed") }
       format.json { head :no_content }
     end
+    
   end
 
   def user_places
-    @places = Place.where(user_id: params[:id])
+    
     @user = User.find_by(id: params[:id] )
+    @places =  @user.places
     render 'places/index'
   end
 

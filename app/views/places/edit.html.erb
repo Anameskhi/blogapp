@@ -16,8 +16,8 @@
 <br>
 
 <div>
-  <%= link_to "Show this place", @place %> |
-  <%= link_to "Back to places", places_path %>
+  <%= link_to "Show this place", @place, class: "btn btn-outline-success btn-block btn-lg gradient-custom-4 " %> 
+  <%= link_to t("Back_to_adresses"), user_places_path(@place.user), class: "btn btn-outline-secondary btn-block btn-lg gradient-custom-4 "%>
 </div>
 </div>
  </div>

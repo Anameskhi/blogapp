@@ -174,3 +174,19 @@ ka:
   you_are_already_vip: თქვენ ხართ უკვე VIP მომხმარებელი
   subscription_success:  გადახდა წარმატებით მოხდა, იხილეთ პრემიუმ პოსტები
   add_place: მისამართის დამატება
+  Edit_this_adress: მისამართის შეცვლა
+  Show_this_adress: მისამართის ნახვა
+  Add_New_Adress: ახალი მისამართის დამატება
+  Back_to_adresses: მისამართებში დაბრუნება
+  longitude: გრძედი
+  latitude: განედი
+  New_Adress: ახალი მისამართი
+  s_adresses: მისამართები
+  Show_User_Adresses: მომხმარებლის მისამართების ნახვა
+  Adress_name: მისამართის სახელი
+  Destroy_this_adress: მისამართის წაშლა
+  Place_was_successfully_created: მისამართი წარმატებით დაემატა
+  Place_was_successfully_updated: წარმატებით მოხდა მისამართის განახლება
+  Place_was_successfully_destroyed: წარმატებით მოხდა მისამართის წაშლა
+  Checkout: გადახდა
+  Month: თვე

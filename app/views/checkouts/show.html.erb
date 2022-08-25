@@ -6,8 +6,8 @@
       <div class="col-lg-4">
         <div class="card mb-5 mb-lg-0 ">
           <div class="card-body ">
-            <h5 class="card-title text-muted text-uppercase text-center">1 Month</h5>
-            <h6 class="card-price text-center ">$15<span class="period">/month</span></h6>
+            <h5 class="card-title text-muted text-uppercase text-center">1 <%=t(:Month)%></h5>
+            <h6 class="card-price text-center ">$15<span class="period">/<%=t(:Month)%></span></h6>
             <hr>
             <ul class="fa-ul">
               <li><span class="fa-li"><i class="fas fa-check"></i></span>Single User</li>
@@ -27,7 +27,7 @@
             
               <%= render partial: 'pay/stripe/checkout_button', locals: {
                 session: @checkout_session1,
-                title: "Checkout",
+                title: t("Checkout"),
                 class: "btn btn-success btn-block btn-lg gradient-custom-4 text-body"
               } %>
              
@@ -39,8 +39,8 @@
       <div class="col-lg-4">
         <div class="card mb-5 mb-lg-0">
           <div class="card-body">
-            <h5 class="card-title text-muted text-uppercase text-center">6 Month</h5>
-            <h6 class="card-price text-center">$12<span class="period">/month</span></h6>
+            <h5 class="card-title text-muted text-uppercase text-center">6 <%=t(:Month)%></h5>
+            <h6 class="card-price text-center">$12<span class="period">/<%=t(:Month)%></span></h6>
             <hr>
             <ul class="fa-ul">
               <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>5 Users</strong></li>
@@ -56,7 +56,7 @@
             <div class="d-grid">
              <%= render partial: 'pay/stripe/checkout_button', locals: {
                 session: @checkout_session2,
-                title: "Checkout",
+                title: t("Checkout"),
                 class: "btn btn-success btn-block btn-lg gradient-custom-4 text-body"
               } %>
             </div>
@@ -67,8 +67,8 @@
       <div class="col-lg-4">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title text-muted text-uppercase text-center">12 Month</h5>
-            <h6 class="card-price text-center">$10<span class="period">/month</span></h6>
+            <h5 class="card-title text-muted text-uppercase text-center">12 <%=t(:Month)%></h5>
+            <h6 class="card-price text-center">$10<span class="period">/<%=t(:Month)%></span></h6>
             <hr>
             <ul class="fa-ul">
               <li><span class="fa-li"><i class="fas fa-check"></i></span><strong>Unlimited Users</strong>
@@ -85,7 +85,7 @@
             <div class="d-grid">
  <%= render partial: 'pay/stripe/checkout_button', locals: {
                 session: @checkout_session3,
-                title: "Checkout",
+                title: t("Checkout"),
                 class: "btn btn-success btn-block btn-lg gradient-custom-4 text-body"
               } %>            </div>
           </div>

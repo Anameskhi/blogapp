@@ -8,10 +8,10 @@
             <div class="card-body p-5"></div>
 <p style="color: green"><%= notice %></p>
 
-<h1 class="text-uppercase text-center mb-5"><%=@user.username%> 's Adresses</h1>
-<% if (current_user&.id == @user.id  ) || current_user&.admin? %>
+<h1 class="text-uppercase text-center mb-5"><%=@user.username%> <%=t('s_adresses')%></h1>
+<% if (current_user&.id == @user.id  )  %>
 <div  class="row justify-content-md-center" >
-    <%= link_to "Add New Adress", new_place_path, class:"btn btn-success btn-block btn-lg gradient-custom-4 text-body" %>
+    <%= link_to t("Add_New_Adress"), new_place_path, class:"btn btn-success btn-block btn-lg gradient-custom-4 text-body" %>
     </div>
     <%end%>
 
@@ -19,7 +19,7 @@
   <% @places.each do |place| %>
     <%= render place %>
      <div class="row md-center">
-    <%= link_to "Show this place", place , class: "btn btn-outline-success btn-block btn-lg gradient-custom-4 " %>
+    <%= link_to t("Show_this_adress"), place , class: "btn btn-outline-success btn-block btn-lg gradient-custom-4 " %>
      </div>
 
     

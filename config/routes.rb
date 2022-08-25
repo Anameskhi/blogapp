@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     end
  
     get 'checkout/success', to: 'checkouts#success' 
-    get 'places/:id', to: 'places#user_places', as: :user_places
+    get 'user/:id/places', to: 'places#user_places', as: :user_places
 
 
     get 'search', to: 'search#index'
