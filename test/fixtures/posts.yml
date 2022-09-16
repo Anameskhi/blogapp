@@ -1,9 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  body: MyText
+  body: MyText1, minimum 10 characters
+  created_at: 2022-07-01 15:50:53
+  title: MyString1
+  updated_at: 2022-07-01 15:50:53
+  user: one
 
 two:
-  title: MyString
-  body: MyText
+  body: MyText2, minimum 10 characters
+  created_at: 2022-07-01 15:50:53
+  title: MyString2
+  updated_at: 2022-07-01 15:50:53
+  user: two
